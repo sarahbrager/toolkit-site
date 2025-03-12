@@ -1,0 +1,13 @@
+---
+title: "Intro to Data Journalism"
+format: html
+---
+
+What is data journalism? 
+
+Data journalism, or data-driven storytelling, is a form of journalism where reporters/other members of a news organization sift through large datasets to uncover trends or other newsworthy information, and then present those findings to the public in a digestible way. Simply put, it’s telling the stories found in data. In reality, though, data journalism is much more creative and complex. It can take a variety of forms, including: 
+
+- Designing visualizations and interactive news graphics to explain numbers (These can often be embedded within news articles.) 
+- Using code to quickly sort through large datasets and pull out the most important information
+- Reporting investigative stories based on findings from a data analysis (You might find something important that’s been completely overlooked!) 
+- Machine learning and AI engineering for newsrooms (This method is more computer science-oriented.) 

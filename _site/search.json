@@ -1,0 +1,20 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Reporting on the Texas Legislature Using Data:",
+    "section": "",
+    "text": "An introduction to data journalism for political reporting including tips for sourcing raw data, using simple code for data analysis, and generating innovative storytelling ideas from the analysis.\nNote: This is a Quarto website. To learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About the Project",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "Home",
+      "About the Project"
+    ]
+  }
+]

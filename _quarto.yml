@@ -1,0 +1,30 @@
+project:
+  type: website
+
+website:
+  title: "Reporting on the Texas Legislature Using Data"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - introduction.qmd 
+      
+  sidebar:
+    style: "docked"
+    search: true
+    contents: 
+      - "About"
+      - href: about.qmd
+      - "Intro to Data Journalism"
+      - href: introduction.qmd
+
+
+format:
+  html:
+    theme: flatly
+    css: styles.css
+    toc: true
+
+editor: visual
+

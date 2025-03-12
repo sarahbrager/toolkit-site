@@ -1,0 +1,11 @@
+---
+title: "Reporting on the Texas Legislature Using Data:"
+---
+
+An introduction to data journalism for political reporting including tips for sourcing raw data, using simple code for data analysis, and generating innovative storytelling ideas from the analysis.
+
+Note: This is a Quarto website. To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+```{r}
+1 + 1
+```
