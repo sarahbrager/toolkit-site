@@ -1,0 +1,6 @@
+---
+title: "Charting The Data"
+format: html
+---
+
+This is a markdown with instructions for using Datawrapper to make three simple charts from the data analysis.

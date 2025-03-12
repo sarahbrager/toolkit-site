@@ -2,23 +2,44 @@ project:
   type: website
 
 website:
-  title: "Reporting on the Texas Legislature Using Data"
+  title: "Reporting on the Texas Legislature: A Data Journalism Toolkit"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-      - introduction.qmd 
+      - text: "Home"
+        href: index.qmd
       
   sidebar:
     style: "docked"
     search: true
     contents: 
-      - "About"
-      - href: about.qmd
-      - "Intro to Data Journalism"
-      - href: introduction.qmd
+      - text: "About This Project"
+        href: about.qmd
+      - text: "Data Journalism Basics"
+        href: introduction.qmd
+      - text: "Sourcing Our Data"
+        href: sourcing.qmd
+      - text: "Cleaning the Data"
+        href: cleaning.qmd
+      - text: "Analyzing the Data"
+        href: analysis.qmd
+      - text: "Making Simple News Graphics"
+        href: charting.qmd
+      - text: "Reporting With This Data"
+        href: reporting.qmd
+      - text: "Additional Resources"
+        href: resources.qmd
+        
 
+title: "Sarah Brager"
+about: 
+  template: trestles
+  links:
+  - icon: github
+    text: github
+    href: https://github.com/sarahbrager
+  - icon: linkedin
+    text: LinkedIn
+    href: https://www.linkedin.com/in/sarah-brager/
 
 format:
   html:

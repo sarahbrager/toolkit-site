@@ -1,5 +1,5 @@
 ---
-title: "Reporting on the Texas Legislature Using Data:"
+title: "Reporting on the Texas Legislature: A Data Journalism Toolkit"
 ---
 
 An introduction to data journalism for political reporting including tips for sourcing raw data, using simple code for data analysis, and generating innovative storytelling ideas from the analysis.

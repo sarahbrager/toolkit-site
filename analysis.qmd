@@ -1,0 +1,6 @@
+---
+title: "Analyzing The Data"
+format: html
+---
+
+This is the document that walks through a simple analysis of the data set.

@@ -14,7 +14,73 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2",
     "crumbs": [
       "Home",
-      "About the Project"
+      "About This Project"
+    ]
+  },
+  {
+    "objectID": "introduction.html",
+    "href": "introduction.html",
+    "title": "Intro to Data Journalism",
+    "section": "",
+    "text": "What is data journalism?\nData journalism, or data-driven storytelling, is a form of journalism where reporters/other members of a news organization sift through large data sets to uncover trends or other newsworthy information, and then present those findings to the public in a digestible way. Simply put, it’s telling the stories found in data. In reality, though, data journalism is much more creative and complex. It can take a variety of forms, including:\n\nDesigning visualizations and interactive news graphics to explain numbers (These can often be embedded within news articles.)\nUsing code to quickly sort through large data sets and pull out the most important information\nReporting investigative stories based on findings from a data analysis (You might find something important that’s been completely overlooked!)\nMachine learning and AI engineering for newsrooms (This method is more computer science-oriented.)\n\nExamples of data journalism:",
+    "crumbs": [
+      "Home",
+      "Data Journalism Basics"
+    ]
+  },
+  {
+    "objectID": "sourcing.html",
+    "href": "sourcing.html",
+    "title": "sourcing",
+    "section": "",
+    "text": "Markdown instructions for sourcing/downloading the data we’re working with.",
+    "crumbs": [
+      "Home",
+      "Sourcing Our Data"
+    ]
+  },
+  {
+    "objectID": "charting.html",
+    "href": "charting.html",
+    "title": "charting",
+    "section": "",
+    "text": "This is a markdown with instructions for using Datawrapper to make three simple charts from the data analysis.",
+    "crumbs": [
+      "Home",
+      "Making Simple News Graphics"
+    ]
+  },
+  {
+    "objectID": "reporting.html",
+    "href": "reporting.html",
+    "title": "reporting",
+    "section": "",
+    "text": "This will have markdown text with story suggestions and whatnot.",
+    "crumbs": [
+      "Home",
+      "Reporting With This Data"
+    ]
+  },
+  {
+    "objectID": "analysis.html",
+    "href": "analysis.html",
+    "title": "analysis",
+    "section": "",
+    "text": "This is the document that walks through a simple analysis of the data set.",
+    "crumbs": [
+      "Home",
+      "Analyzing the Data"
+    ]
+  },
+  {
+    "objectID": "cleaning.html",
+    "href": "cleaning.html",
+    "title": "cleaning",
+    "section": "",
+    "text": "This is the document that walks through importing and cleaning the data set.",
+    "crumbs": [
+      "Home",
+      "Cleaning the Data"
     ]
   }
 ]

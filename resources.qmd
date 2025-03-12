@@ -1,0 +1,6 @@
+---
+title: "resources"
+format: html
+---
+
+Resources if they want to learn more. 
