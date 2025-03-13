@@ -2,12 +2,8 @@
 title: "About This Project"
 ---
 
-This is an independent project by Sarah Brager, a senior studying journalism at The University of Texas at Austin. Sarah created this project as her senior capstone for the Moody College Honors Program and UT's Bridging Disciplines Program, where she's earning a certificate in public policy studies. To learn more about Sarah and see some of her other work, view her LinkedIn and personal portfolio below:
+This is an independent project by Sarah Brager, a senior journalism student at The University of Texas at Austin. She created this project as her senior capstone for the Moody College Honors Program and UT's Bridging Disciplines Program, where she's also earning a certificate in public policy studies. Sarah is a data journalism fellow with UT's Media Innovation Group. To learn more about Sarah and see some of her other work, view her LinkedIn and personal portfolio below:
 
 <https://www.linkedin.com/in/sarah-brager/>
 
 <https://www.clippings.me/users/sarahbrager>
-
-```{r}
-1 + 1
-```

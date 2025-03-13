@@ -1,5 +1,23 @@
 project:
   type: website
+  output-dir: docs
+
+title: "About This Project"
+# add headshot later
+toc: false
+about: 
+  template: jolla
+  links: 
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/sarah-brager/
+    - icon: github
+      text: Github
+      href: https://github.com/sarahbrager 
+    - icon: envelope
+      text: Email
+      href: mailto:sarahbrager@utexas.edu
+
 
 website:
   title: "Reporting on the Texas Legislature: A Data Journalism Toolkit"
@@ -10,7 +28,7 @@ website:
       
   sidebar:
     style: "docked"
-    search: true
+    search: false
     contents: 
       - text: "About This Project"
         href: about.qmd
@@ -29,17 +47,6 @@ website:
       - text: "Additional Resources"
         href: resources.qmd
         
-
-title: "Sarah Brager"
-about: 
-  template: trestles
-  links:
-  - icon: github
-    text: github
-    href: https://github.com/sarahbrager
-  - icon: linkedin
-    text: LinkedIn
-    href: https://www.linkedin.com/in/sarah-brager/
 
 format:
   html:

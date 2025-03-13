@@ -2,16 +2,16 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Reporting on the Texas Legislature Using Data:",
+    "title": "Reporting on the Texas Legislature: A Data Journalism Toolkit",
     "section": "",
-    "text": "An introduction to data journalism for political reporting including tips for sourcing raw data, using simple code for data analysis, and generating innovative storytelling ideas from the analysis.\nNote: This is a Quarto website. To learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "An introduction to data journalism for political reporting including tips for sourcing raw data, using simple code for data analysis, and generating innovative storytelling ideas from the analysis.\nNote: This is a Quarto website. To learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About the Project",
+    "title": "About This Project",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2",
+    "text": "This is an independent project by Sarah Brager, a senior journalism student at The University of Texas at Austin. She created this project as her senior capstone for the Moody College Honors Program and UT’s Bridging Disciplines Program, where she’s also earning a certificate in public policy studies. Sarah is a data journalism fellow with UT’s Media Innovation Group. To learn more about Sarah and see some of her other work, view her LinkedIn and personal portfolio below:\nhttps://www.linkedin.com/in/sarah-brager/\nhttps://www.clippings.me/users/sarahbrager",
     "crumbs": [
       "Home",
       "About This Project"
@@ -42,7 +42,7 @@
   {
     "objectID": "charting.html",
     "href": "charting.html",
-    "title": "charting",
+    "title": "Charting The Data",
     "section": "",
     "text": "This is a markdown with instructions for using Datawrapper to make three simple charts from the data analysis.",
     "crumbs": [
@@ -75,12 +75,23 @@
   {
     "objectID": "cleaning.html",
     "href": "cleaning.html",
-    "title": "cleaning",
+    "title": "Cleaning The Data",
     "section": "",
     "text": "This is the document that walks through importing and cleaning the data set.",
     "crumbs": [
       "Home",
       "Cleaning the Data"
+    ]
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "resources",
+    "section": "",
+    "text": "Resources if they want to learn more.",
+    "crumbs": [
+      "Home",
+      "Additional Resources"
     ]
   }
 ]
