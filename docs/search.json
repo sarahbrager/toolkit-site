@@ -1,0 +1,97 @@
+[
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "resources",
+    "section": "",
+    "text": "Resources if they want to learn more.",
+    "crumbs": [
+      "Home",
+      "Additional Resources"
+    ]
+  },
+  {
+    "objectID": "introduction.html",
+    "href": "introduction.html",
+    "title": "Intro to Data Journalism",
+    "section": "",
+    "text": "What is data journalism?\nData journalism, or data-driven storytelling, is a form of journalism where reporters/other members of a news organization sift through large data sets to uncover trends or other newsworthy information, and then present those findings to the public in a digestible way. Simply put, it’s telling the stories found in data. In reality, though, data journalism is much more creative and complex. It can take a variety of forms, including:\n\nDesigning visualizations and interactive news graphics to explain numbers (These can often be embedded within news articles.)\nUsing code to quickly sort through large data sets and pull out the most important information\nReporting investigative stories based on findings from a data analysis (You might find something important that’s been completely overlooked!)\nMachine learning and AI engineering for newsrooms (This method is more computer science-oriented.)\n\nExamples of data journalism:",
+    "crumbs": [
+      "Home",
+      "Data Journalism Basics"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About This Project",
+    "section": "",
+    "text": "This is an independent project by Sarah Brager, a senior journalism student at The University of Texas at Austin. She created this project as her senior capstone for the Moody College Honors Program and UT’s Bridging Disciplines Program, where she’s also earning a certificate in public policy studies. Sarah is a data journalism fellow with UT’s Media Innovation Group. To learn more about Sarah and see some of her other work, view her LinkedIn and personal portfolio below:\nhttps://www.linkedin.com/in/sarah-brager/\nhttps://www.clippings.me/users/sarahbrager",
+    "crumbs": [
+      "Home",
+      "About This Project"
+    ]
+  },
+  {
+    "objectID": "reporting.html",
+    "href": "reporting.html",
+    "title": "reporting",
+    "section": "",
+    "text": "This will have markdown text with story suggestions and whatnot.",
+    "crumbs": [
+      "Home",
+      "Reporting With This Data"
+    ]
+  },
+  {
+    "objectID": "sourcing.html",
+    "href": "sourcing.html",
+    "title": "sourcing",
+    "section": "",
+    "text": "Markdown instructions for sourcing/downloading the data we’re working with.",
+    "crumbs": [
+      "Home",
+      "Sourcing Our Data"
+    ]
+  },
+  {
+    "objectID": "charting.html",
+    "href": "charting.html",
+    "title": "Charting The Data",
+    "section": "",
+    "text": "This is a markdown with instructions for using Datawrapper to make three simple charts from the data analysis.",
+    "crumbs": [
+      "Home",
+      "Making Simple News Graphics"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Reporting on the Texas Legislature: A Data Journalism Toolkit",
+    "section": "",
+    "text": "An introduction to data journalism for political reporting including tips for sourcing raw data, using simple code for data analysis, and generating innovative storytelling ideas from the analysis.\nNote: This is a Quarto website. To learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "analysis.html",
+    "href": "analysis.html",
+    "title": "Analyzing The Data",
+    "section": "",
+    "text": "This is the document that walks through a simple analysis of the data set.",
+    "crumbs": [
+      "Home",
+      "Analyzing the Data"
+    ]
+  },
+  {
+    "objectID": "cleaning.html",
+    "href": "cleaning.html",
+    "title": "Cleaning The Data",
+    "section": "",
+    "text": "This is the document that walks through importing and cleaning the data set.",
+    "crumbs": [
+      "Home",
+      "Cleaning the Data"
+    ]
+  }
+]
