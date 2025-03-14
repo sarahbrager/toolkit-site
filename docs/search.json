@@ -17,7 +17,6 @@
     "section": "",
     "text": "What is data journalism?\nData journalism, or data-driven storytelling, is a form of journalism where reporters/other members of a news organization sift through large data sets to uncover trends or other newsworthy information, and then present those findings to the public in a digestible way. Simply put, it’s telling the stories found in data. In reality, though, data journalism is much more creative and complex. It can take a variety of forms, including:\n\nDesigning visualizations and interactive news graphics to explain numbers (These can often be embedded within news articles.)\nUsing code to quickly sort through large data sets and pull out the most important information\nReporting investigative stories based on findings from a data analysis (You might find something important that’s been completely overlooked!)\nMachine learning and AI engineering for newsrooms (This method is more computer science-oriented.)\n\nExamples of data journalism:",
     "crumbs": [
-      "Home",
       "Data Journalism Basics"
     ]
   },
@@ -26,9 +25,8 @@
     "href": "about.html",
     "title": "About This Project",
     "section": "",
-    "text": "This is an independent project by Sarah Brager, a senior journalism student at The University of Texas at Austin. She created this project as her senior capstone for the Moody College Honors Program and UT’s Bridging Disciplines Program, where she’s also earning a certificate in public policy studies. Sarah is a data journalism fellow with UT’s Media Innovation Group. To learn more about Sarah and see some of her other work, view her LinkedIn and personal portfolio below:\nhttps://www.linkedin.com/in/sarah-brager/\nhttps://www.clippings.me/users/sarahbrager",
+    "text": "This tutorial is for journalists, or other folks, who have large data sets on their hands and want to analyze them\nFor simplicity, the data used in this toolkit does not include bills filed in Special Session.\n\nA credit to the data source\nAll of the data for this project came from LegiScan [link], a real-time and nonpartisan legislative tracking service available to the public. While this tutorial only focuses on data from the Texas Legislature, LegiScan offers data sets for all 50 states. The data is updated weekly on Sundays.",
     "crumbs": [
-      "Home",
       "About This Project"
     ]
   },
@@ -50,7 +48,6 @@
     "section": "",
     "text": "Markdown instructions for sourcing/downloading the data we’re working with.",
     "crumbs": [
-      "Home",
       "Sourcing Our Data"
     ]
   },
@@ -61,7 +58,6 @@
     "section": "",
     "text": "This is a markdown with instructions for using Datawrapper to make three simple charts from the data analysis.",
     "crumbs": [
-      "Home",
       "Making Simple News Graphics"
     ]
   },
@@ -70,7 +66,10 @@
     "href": "index.html",
     "title": "Reporting on the Texas Legislature: A Data Journalism Toolkit",
     "section": "",
-    "text": "An introduction to data journalism for political reporting including tips for sourcing raw data, using simple code for data analysis, and generating innovative storytelling ideas from the analysis.\nNote: This is a Quarto website. To learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "An introduction to data journalism for political reporting including tips for sourcing raw data, using simple code for data analysis, and generating innovative storytelling ideas from the analysis.\nNote: This is a Quarto website. To learn more about Quarto websites visit https://quarto.org/docs/websites.",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "analysis.html",
@@ -79,7 +78,6 @@
     "section": "",
     "text": "This is the document that walks through a simple analysis of the data set.",
     "crumbs": [
-      "Home",
       "Analyzing the Data"
     ]
   },
@@ -88,10 +86,109 @@
     "href": "cleaning.html",
     "title": "Cleaning The Data",
     "section": "",
-    "text": "This is the document that walks through importing and cleaning the data set.",
+    "text": "Some sort of introductory text to what cleaning data even means.",
     "crumbs": [
-      "Home",
       "Cleaning the Data"
+    ]
+  },
+  {
+    "objectID": "cleaning.html#setup",
+    "href": "cleaning.html#setup",
+    "title": "Cleaning The Data",
+    "section": "1. Setup",
+    "text": "1. Setup\nFirst, we need to load the packages that are going to help facilitate the data analysis. You don’t need to worry about what each package does, but this is an important setup step that allows us to use specific functions later on. I always include these three at the top of every document. Copy and paste the code below and “run” it by hitting the green play button in the top right of your code chunk.\n\n# setup \nlibrary(tidyverse)\nlibrary(janitor)\nlibrary(lubridate)\n\nYou’ll probably see some sort of message pop up after you run the code; as long as there’s no red “error” warning, you’re fine to move on.",
+    "crumbs": [
+      "Cleaning the Data"
+    ]
+  },
+  {
+    "objectID": "cleaning.html#importing-the-data-from-legiscan",
+    "href": "cleaning.html#importing-the-data-from-legiscan",
+    "title": "Cleaning The Data",
+    "section": "2. Importing the data from LegiScan",
+    "text": "2. Importing the data from LegiScan\nNow you need to take the data that we downloaded to your computer and import it into this R file. It sounds complicated, but we can actually do this with a simple line of code.\nIf you open the files we downloaded from LegiScan in the previous step, you’ll see it actually includes seven different data tables. For the purposes of this project, we’re only going to be working with three of those: “bills,” “sponsors,” and “people.” Copy and run the code below to import those three tables into this file.\n\n# come back to this later and add read csv code",
+    "crumbs": [
+      "Cleaning the Data"
+    ]
+  },
+  {
+    "objectID": "cleaning.html#section",
+    "href": "cleaning.html#section",
+    "title": "Cleaning The Data",
+    "section": "3.",
+    "text": "3.",
+    "crumbs": [
+      "Cleaning the Data"
+    ]
+  },
+  {
+    "objectID": "cleaning.html#creating-a-pretty-table-to-work-with",
+    "href": "cleaning.html#creating-a-pretty-table-to-work-with",
+    "title": "Cleaning The Data",
+    "section": "3. Creating a pretty table to work with",
+    "text": "3. Creating a pretty table to work with",
+    "crumbs": [
+      "Cleaning the Data"
+    ]
+  },
+  {
+    "objectID": "cleaning.html#cleaning-those-tables",
+    "href": "cleaning.html#cleaning-those-tables",
+    "title": "Cleaning The Data",
+    "section": "3. “Cleaning” those tables",
+    "text": "3. “Cleaning” those tables\nOftentimes, data tables aren’t in the best shape when you download them. There might be rows or cells that are missing entries, or there may be columns that aren’t necessary for the analysis you want to do. This is where cleaning comes in: you can use code to adjust the table/remove data you don’t need so the final table is much easier to work with.\n\n3.1 Bills\nLet’s clean up each of the data tables one at a time. We’ll start with our “bills” data.\n\nA) View the raw data\nBefore we start cleaning up the tables, let’s take another look at what they look like untouched. Run this code to view the table you just imported.\n\n# add code later to view each table \n\nadd description of what we’re looking at here\n\n\nB) Remove unnecessary columns\n\n# add code later, select function \n\nRestate what we’re left with\n\n\nC) Rename columns\nSometimes the original column names might be\n\n# add code later, rename function\n\nReiterate changes made\n\n\n\n\n3.2 Sponsors\n\nA) View the raw data\n\n\nB) Remove unnecessary columns\n\n\nC) Rename columns\n\n\n\n3.3 People\n\nA) View the raw data\n\n\nB) Remove the unnecessary columns\n\n\nC) Rename columns",
+    "crumbs": [
+      "Cleaning the Data"
+    ]
+  },
+  {
+    "objectID": "cleaning.html#saving-the-clean-table",
+    "href": "cleaning.html#saving-the-clean-table",
+    "title": "Cleaning The Data",
+    "section": "5. Saving the clean table",
+    "text": "5. Saving the clean table",
+    "crumbs": [
+      "Cleaning the Data"
+    ]
+  },
+  {
+    "objectID": "cleaning.html#merge-the-tables-together",
+    "href": "cleaning.html#merge-the-tables-together",
+    "title": "Cleaning The Data",
+    "section": "4. Merge the tables together",
+    "text": "4. Merge the tables together",
+    "crumbs": [
+      "Cleaning the Data"
+    ]
+  },
+  {
+    "objectID": "about.html#a-credit-to-the-data-source",
+    "href": "about.html#a-credit-to-the-data-source",
+    "title": "About This Project",
+    "section": "A credit to the data source",
+    "text": "A credit to the data source\nInclude some sort of disclaimer that all data for this project came from LegiScan; link to site",
+    "crumbs": [
+      "About This Project"
+    ]
+  },
+  {
+    "objectID": "about.html#about-the-author",
+    "href": "about.html#about-the-author",
+    "title": "About This Project",
+    "section": "About the author",
+    "text": "About the author\nThis is an independent project by Sarah Brager, a senior journalism student at The University of Texas at Austin. She created this project as her senior capstone for the Moody College Honors Program and UT’s Bridging Disciplines Program, where she’s also earning a certificate in public policy studies. Sarah is a data journalism fellow with UT’s Media Innovation Group. To learn more about Sarah and see some of her other work, view her LinkedIn at the top right of this website.",
+    "crumbs": [
+      "About This Project"
+    ]
+  },
+  {
+    "objectID": "author.html",
+    "href": "author.html",
+    "title": "Meet the Author",
+    "section": "",
+    "text": "Sarah Brager is a senior journalism student at The University of Texas at Austin. She created this project as her senior capstone for the Moody College Honors Program and Bridging Disciplines Program at UT, where she’s also earning a certificate in public policy studies. She is currently a data journalism fellow with UT’s Media Innovation Group. To learn more about Sarah and view her other work, visit her LinkedIn at the top right of this website.",
+    "crumbs": [
+      "Meet the Author"
     ]
   }
 ]

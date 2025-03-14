@@ -1,0 +1,7 @@
+---
+title: "Meet the Author"
+format: html
+---
+
+
+Sarah Brager is a senior journalism student at The University of Texas at Austin. She created this project as her senior capstone for the Moody College Honors Program and Bridging Disciplines Program at UT, where she's also earning a certificate in public policy studies. She is currently a data journalism fellow with UT's Media Innovation Group. To learn more about Sarah and view her other work, visit her LinkedIn at the top right of this website.

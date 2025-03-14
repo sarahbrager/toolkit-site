@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -37,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6d5f49080fd7a04518cb6db3008564bf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ba7708e0e8f6c8e91da880ad81c024e1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -81,15 +115,25 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Reporting on the Texas Legislature: A Data Journalism Toolkit</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/sarahbrager"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/sarah-brager/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:sarahbrager@utexas.edu"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -114,6 +158,12 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./about.html" class="sidebar-item-text sidebar-link">
@@ -162,40 +212,134 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Additional Resources</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./author.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Meet the Author</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+  <ul>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">1. Setup</a></li>
+  <li><a href="#importing-the-data-from-legiscan" id="toc-importing-the-data-from-legiscan" class="nav-link" data-scroll-target="#importing-the-data-from-legiscan">2. Importing the data from LegiScan</a></li>
+  <li><a href="#cleaning-those-tables" id="toc-cleaning-those-tables" class="nav-link" data-scroll-target="#cleaning-those-tables">3. “Cleaning” those tables</a>
+  <ul class="collapse">
+  <li><a href="#bills" id="toc-bills" class="nav-link" data-scroll-target="#bills">3.1 Bills</a></li>
+  <li><a href="#sponsors" id="toc-sponsors" class="nav-link" data-scroll-target="#sponsors">3.2 Sponsors</a></li>
+  <li><a href="#people" id="toc-people" class="nav-link" data-scroll-target="#people">3.3 People</a></li>
+  </ul></li>
+  <li><a href="#merge-the-tables-together" id="toc-merge-the-tables-together" class="nav-link" data-scroll-target="#merge-the-tables-together">4. Merge the tables together</a></li>
+  <li><a href="#saving-the-clean-table" id="toc-saving-the-clean-table" class="nav-link" data-scroll-target="#saving-the-clean-table">5. Saving the clean table</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<div class="quarto-about-jolla">
- <header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-about-solana column-body">
+  <div class="about-entity">
+    <div class="entity-contents">
+      <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Cleaning The Data</h1>
 </div>
 <div class="quarto-title-meta">
   </div>
-</header><main class="content" id="quarto-document-content">
-<p>This is the document that walks through importing and cleaning the data set.</p>
+</header> 
+      <div class="about-contents"><main class="content" id="quarto-document-content">
 
-
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://www.linkedin.com/in/sarah-brager/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/sarahbrager" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="mailto:sarahbrager@utexas.edu" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
+<p>Some sort of introductory text to what cleaning data even means.</p>
+<section id="setup" class="level2">
+<h2 data-anchor-id="setup">1. Setup</h2>
+<p>First, we need to load the packages that are going to help facilitate the data analysis. You don’t need to worry about what each package does, but this is an important setup step that allows us to use specific functions later on. I always include these three at the top of every document. Copy and paste the code below and “run” it by hitting the green play button in the top right of your code chunk.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setup </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>You’ll probably see some sort of message pop up after you run the code; as long as there’s no red “error” warning, you’re fine to move on.</p>
+</section>
+<section id="importing-the-data-from-legiscan" class="level2">
+<h2 data-anchor-id="importing-the-data-from-legiscan">2. Importing the data from LegiScan</h2>
+<p>Now you need to take the data that we downloaded to your computer and import it into this R file. It sounds complicated, but we can actually do this with a simple line of code.</p>
+<p>If you open the files we downloaded from LegiScan in the previous step, you’ll see it actually includes seven different data tables. For the purposes of this project, we’re only going to be working with three of those: “bills,” “sponsors,” and “people.” Copy and run the code below to import those three tables into this file.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># come back to this later and add read csv code </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="cleaning-those-tables" class="level2">
+<h2 data-anchor-id="cleaning-those-tables">3. “Cleaning” those tables</h2>
+<p>Oftentimes, data tables aren’t in the best shape when you download them. There might be rows or cells that are missing entries, or there may be columns that aren’t necessary for the analysis you want to do. This is where cleaning comes in: you can use code to adjust the table/remove data you don’t need so the final table is much easier to work with.</p>
+<section id="bills" class="level3">
+<h3 data-anchor-id="bills">3.1 Bills</h3>
+<p>Let’s clean up each of the data tables one at a time. We’ll start with our “bills” data.</p>
+<section id="a-view-the-raw-data" class="level5">
+<h5 data-anchor-id="a-view-the-raw-data">A) View the raw data</h5>
+<p>Before we start cleaning up the tables, let’s take another look at what they look like untouched. Run this code to view the table you just imported.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code later to view each table </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>add description of what we’re looking at here</p>
+</section>
+<section id="b-remove-unnecessary-columns" class="level5">
+<h5 data-anchor-id="b-remove-unnecessary-columns">B) Remove unnecessary columns</h5>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code later, select function </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Restate what we’re left with</p>
+</section>
+<section id="c-rename-columns" class="level5">
+<h5 data-anchor-id="c-rename-columns">C) Rename columns</h5>
+<p>Sometimes the original column names might be</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code later, rename function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Reiterate changes made</p>
+<pre><code></code></pre>
+</section>
+</section>
+<section id="sponsors" class="level3">
+<h3 data-anchor-id="sponsors">3.2 Sponsors</h3>
+<section id="a-view-the-raw-data-1" class="level5">
+<h5 data-anchor-id="a-view-the-raw-data-1">A) View the raw data</h5>
+</section>
+<section id="b-remove-unnecessary-columns-1" class="level5">
+<h5 data-anchor-id="b-remove-unnecessary-columns-1">B) Remove unnecessary columns</h5>
+</section>
+<section id="c-rename-columns-1" class="level5">
+<h5 data-anchor-id="c-rename-columns-1">C) Rename columns</h5>
+</section>
+</section>
+<section id="people" class="level3">
+<h3 data-anchor-id="people">3.3 People</h3>
+<section id="a-view-the-raw-data-2" class="level5">
+<h5 data-anchor-id="a-view-the-raw-data-2">A) View the raw data</h5>
+</section>
+<section id="b-remove-the-unnecessary-columns" class="level5">
+<h5 data-anchor-id="b-remove-the-unnecessary-columns">B) Remove the unnecessary columns</h5>
+</section>
+<section id="c-rename-columns-2" class="level5">
+<h5 data-anchor-id="c-rename-columns-2">C) Rename columns</h5>
+</section>
+</section>
+</section>
+<section id="merge-the-tables-together" class="level2">
+<h2 data-anchor-id="merge-the-tables-together">4. Merge the tables together</h2>
+</section>
+<section id="saving-the-clean-table" class="level2">
+<h2 data-anchor-id="saving-the-clean-table">5. Saving the clean table</h2>
+
+
+</section>
+</main></div>
+    </div>
+  </div>
 </div>
  <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -609,6 +753,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>This website was built with</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

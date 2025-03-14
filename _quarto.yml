@@ -6,30 +6,32 @@ title: "About This Project"
 # add headshot later
 toc: false
 about: 
-  template: jolla
-  links: 
-    - icon: linkedin
-      text: LinkedIn
-      href: https://www.linkedin.com/in/sarah-brager/
-    - icon: github
-      text: Github
-      href: https://github.com/sarahbrager 
-    - icon: envelope
-      text: Email
-      href: mailto:sarahbrager@utexas.edu
+  template: solana
 
 
 website:
   title: "Reporting on the Texas Legislature: A Data Journalism Toolkit"
   navbar:
-    left:
-      - text: "Home"
-        href: index.qmd
+    background: dark
+    search: false
+    right: 
+      - icon: github
+        href: https://github.com/sarahbrager
+      - icon: linkedin
+        href: https://www.linkedin.com/in/sarah-brager/
+      - icon: envelope
+        href: mailto:sarahbrager@utexas.edu
+  page-footer: 
+    background: light
+    left: This website was built with # add R and Quarto icons later
       
   sidebar:
     style: "docked"
     search: false
-    contents: 
+    background: secondary
+    contents:
+      - text: "Home"
+        href: index.qmd
       - text: "About This Project"
         href: about.qmd
       - text: "Data Journalism Basics"
@@ -46,11 +48,18 @@ website:
         href: reporting.qmd
       - text: "Additional Resources"
         href: resources.qmd
+      - text: "Meet the Author"
+        href: author.qmd
         
 
 format:
   html:
-    theme: flatly
+    grid:
+      sidebar-width: 300px
+      body-width: 900px
+      margin-width: 300px
+      gutter-width: 1.5rem
+    theme: yeti
     css: styles.css
     toc: true
 

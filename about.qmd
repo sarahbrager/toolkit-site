@@ -2,8 +2,12 @@
 title: "About This Project"
 ---
 
-This is an independent project by Sarah Brager, a senior journalism student at The University of Texas at Austin. She created this project as her senior capstone for the Moody College Honors Program and UT's Bridging Disciplines Program, where she's also earning a certificate in public policy studies. Sarah is a data journalism fellow with UT's Media Innovation Group. To learn more about Sarah and see some of her other work, view her LinkedIn and personal portfolio below:
+This tutorial is for journalists, or other folks, who have large data sets on their hands and want to analyze them
 
-<https://www.linkedin.com/in/sarah-brager/>
+For simplicity, the data used in this toolkit does not include bills filed in Special Session.
 
-<https://www.clippings.me/users/sarahbrager>
+### A credit to the data source 
+
+All of the data for this project came from LegiScan \[link\], a real-time and nonpartisan legislative tracking service available to the public. While this tutorial only focuses on data from the Texas Legislature, LegiScan offers data sets for all 50 states. The data is updated weekly on Sundays.
+
+### 

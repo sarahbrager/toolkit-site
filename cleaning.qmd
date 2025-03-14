@@ -1,6 +1,92 @@
 ---
 title: "Cleaning The Data"
-format: html
+execute: 
+  output: false
 ---
 
-This is the document that walks through importing and cleaning the data set.
+Some sort of introductory text to what cleaning data even means.
+
+## 1. Setup
+
+First, we need to load the packages that are going to help facilitate the data analysis. You don't need to worry about what each package does, but this is an important setup step that allows us to use specific functions later on. I always include these three at the top of every document. Copy and paste the code below and "run" it by hitting the green play button in the top right of your code chunk.
+
+```{r}
+#| label: setup
+# setup 
+library(tidyverse)
+library(janitor)
+library(lubridate)
+```
+
+You'll probably see some sort of message pop up after you run the code; as long as there's no red "error" warning, you're fine to move on.
+
+## 2. Importing the data from LegiScan
+
+Now you need to take the data that we downloaded to your computer and import it into this R file. It sounds complicated, but we can actually do this with a simple line of code.
+
+If you open the files we downloaded from LegiScan in the previous step, you'll see it actually includes seven different data tables. For the purposes of this project, we're only going to be working with three of those: "bills," "sponsors," and "people." Copy and run the code below to import those three tables into this file.
+
+```{r}
+#| label: import
+# come back to this later and add read csv code 
+
+```
+
+## 3. "Cleaning" those tables
+
+Oftentimes, data tables aren't in the best shape when you download them. There might be rows or cells that are missing entries, or there may be columns that aren't necessary for the analysis you want to do. This is where cleaning comes in: you can use code to adjust the table/remove data you don't need so the final table is much easier to work with.
+
+### 3.1 Bills
+
+Let's clean up each of the data tables one at a time. We'll start with our "bills" data.
+
+##### A) View the raw data
+
+Before we start cleaning up the tables, let's take another look at what they look like untouched. Run this code to view the table you just imported.
+
+```{r}
+# add code later to view each table 
+```
+
+add description of what we're looking at here
+
+##### B) Remove unnecessary columns 
+
+```{r}
+# add code later, select function 
+```
+
+Restate what we're left with
+
+##### C) Rename columns 
+
+Sometimes the original column names might be
+
+```{r}
+# add code later, rename function
+```
+
+Reiterate changes made
+
+```         
+```
+
+### 3.2 Sponsors
+
+##### A) View the raw data 
+
+##### B) Remove unnecessary columns 
+
+##### C) Rename columns 
+
+### 3.3 People
+
+##### A) View the raw data
+
+##### B) Remove the unnecessary columns 
+
+##### C) Rename columns 
+
+## 4. Merge the tables together 
+
+## 5. Saving the clean table
