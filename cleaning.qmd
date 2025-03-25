@@ -27,9 +27,24 @@ Now you need to take the data that we downloaded to your computer and import it 
 If you open the files we downloaded from LegiScan in the previous step, you'll see it actually includes seven different data tables. For the purposes of this project, we're only going to be working with three of those: "bills," "sponsors," and "people." Copy and run the code below to import those three tables into this file.
 
 ```{r}
-#| label: import
-# come back to this later and add read csv code 
+#| label: import bills
+ bills <- read_csv("data-raw/tx-bills-all/2025-2026_89th_Legislature/csv/bills.csv")
+ 
+ bills
+```
 
+```{r}
+#| label: import sponsors
+sponsors <- read_csv("data-raw/tx-bills-all/2025-2026_89th_Legislature/csv/sponsors.csv")
+
+sponsors
+```
+
+```{r}
+#| label: import people
+lawmakers <- read_csv("data-raw/tx-bills-all/2025-2026_89th_Legislature/csv/people.csv")
+
+lawmakers
 ```
 
 ## 3. "Cleaning" those tables
@@ -45,48 +60,116 @@ Let's clean up each of the data tables one at a time. We'll start with our "bill
 Before we start cleaning up the tables, let's take another look at what they look like untouched. Run this code to view the table you just imported.
 
 ```{r}
-# add code later to view each table 
+#| label: view bill data
+bills
 ```
 
 add description of what we're looking at here
 
-##### B) Remove unnecessary columns 
+##### B) Remove unnecessary columns and rename columns
 
 ```{r}
-# add code later, select function 
+#| label: clean bill data 
+bills_clean <- bills |> 
+   select(-session_id, -status, -status_desc, -title, -committee_id, -committee, -last_action_date, -last_action, -url, -state_link) |> 
+  rename(date_filed = status_date)
+
+bills_clean 
 ```
 
-Restate what we're left with
+Describe what we're looking at now.
 
-##### C) Rename columns 
-
-Sometimes the original column names might be
-
-```{r}
-# add code later, rename function
-```
-
-Reiterate changes made
-
-```         
-```
-
-### 3.2 Sponsors
-
-##### A) View the raw data 
-
-##### B) Remove unnecessary columns 
-
-##### C) Rename columns 
-
-### 3.3 People
+### 3.2 Lawmakers
 
 ##### A) View the raw data
 
-##### B) Remove the unnecessary columns 
+```{r}
+#| label: view lawmaker data 
+lawmakers 
+```
 
-##### C) Rename columns 
+Description of what we've got here.
 
-## 4. Merge the tables together 
+##### B) Remove unnecessary columns and rename columns
+
+```{r}
+#| label: clean lawmaker data 
+lawmakers_clean <- lawmakers |> 
+  select(people_id, name, party, role, district) 
+
+lawmakers_clean
+```
+
+Description of what we're working with now.
+
+### 3.3 Sponsors
+
+##### A) View the raw data
+
+```{r}
+#| label: view sponsor data 
+sponsors
+```
+
+##### B) Remove unnecessary columns and rename columns
+
+```{r}
+#| label: clean sponsor data 
+
+sponsors |> 
+  select(-position)
+
+```
+
+Restate all the changes made.
+
+## 4. Merge the tables together
+
+Now that we've selected the columns we want to work with in each of the three data tables, we need to merge everything together into one big table that we'll use for our analysis. You'll notice there are a couple of repeat columns in the tables, such as people_id and bill_id. We'll want to make sure those only appear once in our big table. Let's do this in two steps: first, copy the code below to merge the lawmaker and sponsor tables together.
+
+```{r}
+lawmaker_sponsor <- merge(lawmakers_clean, sponsors) |> 
+  select(-position)
+
+lawmaker_sponsor
+```
+
+Now lets add the description column and date_filed column from the bills table.
+
+```{r}
+final_table <- lawmaker_sponsor |> 
+  left_join(bills_clean, by = join_by(bill_id)) 
+
+final_table
+```
+
+Great! You should have one data table with the following information:
+
+-   name = lawmaker's name
+
+-   people_id = the unique number associated with each lawmaker
+
+-   party = political party for each lawmaker
+
+-   role = whether the lawmaker is a senator or a representative
+
+-   district = the congressional district associated with each lawmaker
+
+-   bill_id = the unique number associated with a specific bill filed this session
+
+-   date_filed = the date that bill was introduced
+
+-   description = explains what a specific bill aims to do
+
+We'll be able to quickly sort through all of this information and identify key details about the agendas of Texas lawmakers in the current legislative session. Let's save this table before we move forward with our analysis.
 
 ## 5. Saving the clean table
+
+Add instructions for creating a data-processed file.
+
+```{r}
+final_table |> 
+  write_rds("data-processed/bills-89.rds")
+```
+
+In the next chapter of this toolkit, we'll brain storm some potential questions about the session and use the data to find some answers.

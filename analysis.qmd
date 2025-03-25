@@ -1,6 +1,119 @@
 ---
 title: "Analyzing The Data"
-format: html
+execute: 
+  output: false
 ---
 
-This is the document that walks through a simple analysis of the data set.
+Before starting a data analysis, it's a good idea to brain dump a series of questions you hope to answer based on the variables you know you're working with. For this toolkit, we're going to answer the following:
+
+-   Which Texas lawmakers filed the most bills? What does that look like broken down by political party?
+
+    -    We'll also look at who has filed the least
+
+-   From which districts do the lawmakers who have filed the most come from?
+
+-   What does the number of bills filed look like in each month? Which month had the most?
+
+-   How many bills can we flag for some of the biggest policy issues in Texas right now: abortion, immigration, education, energy/environment, and transgender issues?
+
+    -   We'll flag bills that use these terms explicitly, as well as bills that use related terms
+
+-   How do the stats above compare to the 88th legislative session?
+
+This is not an exhaustive list of the questions you could answer with this data, but it's a good introduction to sorting through large data sets. Let's take a look at these questions one at a time.
+
+### 1. Setup again
+
+As with your cleaning file, you need to import the libraries that allow you to run certain functions. We'll be loading the same ones. Copy the code below and run it.
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(janitor)
+library(lubridate)
+```
+
+### 2. Importing the clean data
+
+Copy and run the code below to import the table we saved in the previous step. To view the table again, type "final_table" on a new line in the code chunk and run it again. There should be 14,190 rows of data with nine columns: people_id, name, party, role, district, bill_id, bill_number, date_filed, and description. Right now, you can see the data is listed in alphabetical order by lawmaker last name, which is why Rep. Alma Allen comes up for the first 50 rows. In the next few steps, we'll use different functions to rearrange the table and look at the data in new ways!
+
+```{r}
+#| label: import
+final_table <- read_rds("data-processed/bills-89.rds")
+
+final_table
+```
+
+### 3. Lawmakers: most vs. least filed
+
+Now let's get into our first question: which lawmaker filed the most bills this session? To figure this out, we're going to use three functions — group_by, summarize and arrange.
+
+-   "group_by" allows us to sort the data into specific groups based on variables that we want to focus on; in this case, we want to group by name, party, role, and district.
+
+-   "summarize" computes a summary of the data usually by a mean or a sum; we'll just be focusing on the sum aspect because we want to count the number of bills each lawmaker has filed.
+
+-   "arrange" allows us to determine how we want to data to be presented; we can use this function to order the lawmaker names from most filed to least filed
+
+It's very common to use these three functions together to run basic computations of data. So let's apply it to our data set! Run the code below to find out who filed the most bills.
+
+#### 3.1 Doing the most first
+
+```{r}
+#| label: most filed 
+final_table |> 
+  group_by(name, party, role, district) |> 
+  summarise(number_filed = n()) |> 
+  arrange(desc(number_filed))
+```
+
+Looks like Sen. Bryan Hughes filed the most this session, with 276 bills. If you click through the table, you'll see the values in the "number_filed" column decrease. That's because we added the "desc()" element to our arrange function, which means we want it arranged in descending order.
+
+#### 3.2 Just the top of the list
+
+We're looking at a lot of rows here, 180 to be exact, so what if we wanted to easily focus on the top 10 lawmakers who have filed the most this session? We can do this with the head() function. Run the code again, this time with one extra line at the end.
+
+```{r}
+#| label: top ten
+final_table |> 
+  group_by(name, party, role, district) |> 
+  summarise(number_filed = n()) |> 
+  arrange(desc(number_filed)) |> 
+  head(10)
+```
+
+Because we put the number 10 inside the head function, the table now only shows the first 10 rows – or top 10 lawmakers based on number of bills filed. Feel free to mess around with the number inside the head function and see how your result changes, such as finding the top 25 or top 50.
+
+#### 3.3 Now the least
+
+We can easily see who filed the least bills with one small change to the code above. The arrange() function defaults to ascending order, so least filed to most filed, when we don't have that desc() specification in the code. So all we need to do is take that out and run it!
+
+```{r}
+#| label: least filed
+final_table |> 
+  group_by(name, party, role, district) |> 
+  summarise(number_filed = n()) |> 
+  arrange(number_filed)
+```
+
+Rep. Ramon Romero Jr. filed the least this session, with only 10 bills. Like before, let's just focus on the top 10 rows, which in this case would be the 10 lawmakers who filed the least bills this session. Copy and run the code below.
+
+```{r}
+#| label: top ten least 
+final_table |> 
+  group_by(name, party, role, district) |> 
+  summarise(number_filed = n()) |> 
+  arrange(number_filed) |> 
+  head(10)
+```
+
+Congrats! You just answered the first questions from the brainstorm. And hopefully you're starting to realize how you can organize a data table and look at it in different ways.
+
+### 4. Districts 
+
+### 5. Bills per month 
+
+### 6. Policy topics 
+
+### 7. This session vs. last session 
+
+### 8. Recap of what we learned 
