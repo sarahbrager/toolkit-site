@@ -2,6 +2,14 @@ project:
   type: website
   output-dir: docs
 
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    df-print: paged
+    code-overflow: wrap
+    
 title: "About This Project"
 # add headshot later
 toc: false
@@ -52,16 +60,6 @@ website:
         href: author.qmd
         
 
-format:
-  html:
-    grid:
-      sidebar-width: 250px
-      body-width: 800px
-      margin-width: 250px
-      gutter-width: 1.5em
-    theme: yeti
-    css: styles.scss
-    toc: true
 
 editor: visual
 

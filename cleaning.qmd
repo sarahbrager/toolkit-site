@@ -172,4 +172,9 @@ final_table |>
   write_rds("data-processed/bills-89.rds")
 ```
 
+```{r}
+final_table |> 
+  write_csv("data-processed/bills-89.csv")
+```
+
 In the next chapter of this toolkit, we'll brain storm some potential questions about the session and use the data to find some answers.

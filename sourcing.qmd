@@ -3,4 +3,4 @@ title: "sourcing"
 format: html
 ---
 
-Markdown instructions for sourcing/downloading the data we're working with. 
+Include a video tutorial at the top of this page.

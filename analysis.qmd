@@ -8,7 +8,7 @@ Before starting a data analysis, it's a good idea to brain dump a series of ques
 
 -   Which Texas lawmakers filed the most bills? What does that look like broken down by political party?
 
-    -    We'll also look at who has filed the least
+    -   We'll also look at who has filed the least
 
 -   From which districts do the lawmakers who have filed the most come from?
 
@@ -66,6 +66,10 @@ final_table |>
   arrange(desc(number_filed))
 ```
 
+::: {.callout-tip title="Tip"}
+If you try to run the code and you get an error, check the syntax. Do all of your indents match mine? Did you accidentally add in a comma or a parenthesis? Code syntax is extremely important, and most code errors are from very small mistakes in the typing.
+:::
+
 Looks like Sen. Bryan Hughes filed the most this session, with 276 bills. If you click through the table, you'll see the values in the "number_filed" column decrease. That's because we added the "desc()" element to our arrange function, which means we want it arranged in descending order.
 
 #### 3.2 Just the top of the list
@@ -74,14 +78,16 @@ We're looking at a lot of rows here, 180 to be exact, so what if we wanted to ea
 
 ```{r}
 #| label: top ten
-final_table |> 
+most_filed <- final_table |> 
   group_by(name, party, role, district) |> 
   summarise(number_filed = n()) |> 
   arrange(desc(number_filed)) |> 
   head(10)
+
+most_filed
 ```
 
-Because we put the number 10 inside the head function, the table now only shows the first 10 rows – or top 10 lawmakers based on number of bills filed. Feel free to mess around with the number inside the head function and see how your result changes, such as finding the top 25 or top 50.
+Because we put the number 10 inside the head function, the table now only shows the first 10 rows – or top 10 lawmakers based on number of bills filed. Feel free to mess around with the number inside the head function and see how your result changes.
 
 #### 3.3 Now the least
 
@@ -108,12 +114,74 @@ final_table |>
 
 Congrats! You just answered the first questions from the brainstorm. And hopefully you're starting to realize how you can organize a data table and look at it in different ways.
 
-### 4. Districts 
+### 4. Districts
 
-### 5. Bills per month 
+Now that we know who filed the most bills this session, we want to figure out which districts they represent. Our data set has a Texas house or senate district (HD/SD) associated with each lawmaker, so we can use a similar method as above to quickly see where the most "active" lawmakers come from.
 
-### 6. Policy topics 
+```{r}
+#| label: districts
+final_table |> 
+  group_by(name, district) |> 
+  count(district) |> 
+  arrange(desc(n))
+  
 
-### 7. This session vs. last session 
+```
 
-### 8. Recap of what we learned 
+### 5. Bills per month
+
+xyz markdown
+
+::: {.callout-note icon="false"}
+## Note
+
+November and March are both incomplete months in the data set because filing opened on Nov. 12 and closed on March 14. Keep this in mind when analyzing your results in this section.
+:::
+
+### 6. Policy topics
+
+```{r}
+final_table |> 
+  filter(grepl("abortion", description, ignore.case = TRUE))
+```
+
+```{r}
+final_table |> 
+  filter(grepl("immigration", description, ignore.case = TRUE))
+```
+
+```{r}
+final_table |> 
+  filter(grepl("diversity", description, ignore.case = TRUE))
+```
+
+```{r}
+final_table |> 
+  filter(grepl("energy", description, ignore.case = TRUE))
+```
+
+```{r}
+final_table |> 
+  filter(grepl("cannabis|marijuana", description, ignore.case = TRUE))
+```
+
+```{r}
+final_table |> 
+  filter(grepl("prayer", description, ignore.case = TRUE))
+```
+
+::: {.callout-note icon="false"}
+## Reminder
+
+The data we're using for this section comes from the bill description only, not the full bill text. This is important to keep in mind as we search for key words.
+:::
+
+### 7. This session vs. last session
+
+### 8. Saving tables for charts
+
+```{r}
+write_csv(most_filed, "data-processed/most-filed.csv")
+```
+
+### 9. Recap of what we learned
