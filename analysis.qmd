@@ -2,6 +2,9 @@
 title: "Analyzing The Data"
 execute: 
   output: false
+format: 
+  html:
+    df-print: tibble 
 ---
 
 Before starting a data analysis, it's a good idea to brain dump a series of questions you hope to answer based on the variables you know you're working with. For this toolkit, we're going to answer the following:
@@ -31,6 +34,7 @@ As with your cleaning file, you need to import the libraries that allow you to r
 library(tidyverse)
 library(janitor)
 library(lubridate)
+library(stringr)
 ```
 
 ### 2. Importing the clean data
@@ -125,12 +129,16 @@ final_table |>
   count(district) |> 
   arrange(desc(n))
   
-
 ```
 
 ### 5. Bills per month
 
-xyz markdown
+```{r}
+final_table |> 
+  group_by(status_date) |> 
+  summarise()
+  
+```
 
 ::: {.callout-note icon="false"}
 ## Note
@@ -138,7 +146,54 @@ xyz markdown
 November and March are both incomplete months in the data set because filing opened on Nov. 12 and closed on March 14. Keep this in mind when analyzing your results in this section.
 :::
 
-### 6. Policy topics
+### 6. Policy topics // Status tracking
+
+Trying to organize status by type of legislation (HB, SB, HR, SR, HJR, SJR, HCR, SCR)
+
+```{r}
+
+sb_status <- final_table |> 
+  filter(grepl("SB", bill_number, ignore.case = TRUE)) |> 
+  count(status_desc) |> 
+  mutate(chamber = "Sen", bill_type = "Bill") 
+
+hb_status <- final_table |> 
+  filter(grepl("HB", bill_number, ignore.case = TRUE)) |> 
+  count(status_desc) |> 
+  mutate(chamber = "House", bill_type = "Bill")
+
+sr_status <- final_table |> 
+  filter(grepl("SR", bill_number, ignore.case = TRUE)) |> 
+  count(status_desc) |> 
+  mutate(chamber = "Sen", bill_type = "Resolution")
+
+hr_status <- final_table |> 
+  filter(grepl("HR", bill_number, ignore.case = TRUE)) |> 
+  count(status_desc) |> 
+  mutate(chamber = "House", bill_type = "Resolution") 
+
+hjr_status <- final_table |> 
+  filter(grepl("HJR", bill_number, ignore.case = TRUE)) |> 
+  count(status_desc) |> 
+  mutate(chamber = "House", bill_type = "Joint Res")
+
+sjr_status <- final_table |> 
+  filter(grepl("SJR", bill_number, ignore.case = TRUE)) |> 
+  count(status_desc) |> 
+  mutate(chamber = "Sen", bill_type = "Joint Resolution")
+
+hcr_status <- final_table |> 
+  filter(grepl("HCR", bill_number, ignore.case = TRUE)) |> 
+  count(status_desc) |> 
+  mutate(chamber = "House", bill_type = "Concurrent Resolution")
+
+scr_status <- final_table |> 
+  filter(grepl("SCR", bill_number, ignore.case = TRUE)) |> 
+  count(status_desc) |> 
+  mutate(chamber = "Sen", bill_type = "Concurrent Resolution")
+
+
+```
 
 ```{r}
 final_table |> 

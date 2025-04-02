@@ -4,4 +4,16 @@ title: "Reporting on the Texas Legislature: A Data Journalism Toolkit"
 
 An introduction to data journalism for political reporting including tips for sourcing raw data, using simple code for data analysis, and generating innovative storytelling ideas from the analysis.
 
-Note: This is a Quarto website. To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+::: {.callout-note appearance="simple"}
+## Note
+
+This website was made with Quarto. It is subject to updates. To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+:::
+
+## About this project 
+
+### 
+
+## Toolkit objectives 
+
+#### By the end of this tutorial, you will have learned how to: 

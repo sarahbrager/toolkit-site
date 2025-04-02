@@ -36,15 +36,15 @@ website:
   sidebar:
     style: "docked"
     search: false
-    background: secondary
+    background: light
     contents:
       - text: "Home"
         href: index.qmd
-      - text: "About This Project"
-        href: about.qmd
-      - text: "Data Journalism Basics"
+      - text: "Intro to Data Journalism"
         href: introduction.qmd
-      - text: "Sourcing Our Data"
+      - text: "Setting Up"
+        href: about.qmd
+      - text: "Sourcing the Data"
         href: sourcing.qmd
       - text: "Cleaning the Data"
         href: cleaning.qmd

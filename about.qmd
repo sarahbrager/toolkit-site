@@ -1,13 +1,7 @@
 ---
-title: "About This Project"
+title: "Getting Started with R"
 ---
 
-This tutorial is for journalists, or other folks, who have large data sets on their hands and want to analyze them
-
-For simplicity, the data used in this toolkit does not include bills filed in Special Session.
-
-### A credit to the data source 
-
-All of the data for this project came from LegiScan \[link\], a real-time and nonpartisan legislative tracking service available to the public. While this tutorial only focuses on data from the Texas Legislature, LegiScan offers data sets for all 50 states. The data is updated weekly on Sundays.
+Tutorial on installing and setting up R workspace.
 
 ### 

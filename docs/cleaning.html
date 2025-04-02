@@ -71,7 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-47520316d5b85b5961f1f65aac18873f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-899415b1d55dc66ab297ee27e61ae28c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -99,6 +99,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -167,19 +169,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./about.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">About This Project</span></a>
+ <span class="menu-text">Setting Up</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Journalism Basics</span></a>
+ <span class="menu-text">Intro to Data Journalism</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sourcing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sourcing Our Data</span></a>
+ <span class="menu-text">Sourcing the Data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -256,19 +258,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Some sort of introductory text to what cleaning data even means.</p>
 <section id="setup" class="level2">
 <h2 data-anchor-id="setup">1. Setup</h2>
-<p>First, we need to load the packages that are going to help facilitate the data analysis. You don’t need to worry about what each package does, but this is an important setup step that allows us to use specific functions later on. I always include these three at the top of every document. Copy and paste the code below and “run” it by hitting the green play button in the top right of your code chunk.</p>
+<p>First, we need to load the packages that are going to help facilitate the data analysis. You don’t need to worry about what each package does, but this is an important setup step that allows us to use specific functions later on. I always include these three at the top of every R file.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Important">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Add a “code chunk” to your file by hitting Command+Option+i on the keyboard. All of our code will be run within these chunks, so get used to this keyboard shortcut!</p>
+</div>
+</div>
+<p>Copy and paste the code below and “run” it by hitting the green play button in the top right of your code chunk.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setup </span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>You’ll probably see some sort of message pop up after you run the code; as long as there’s no red “error” warning, you’re fine to move on.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Tip">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You’ll see some sort of message pop up after you run the code; as long as there’s no red “error” warning, you’re fine to move on.</p>
+</div>
+</div>
 </section>
 <section id="importing-the-data-from-legiscan" class="level2">
 <h2 data-anchor-id="importing-the-data-from-legiscan">2. Importing the data from LegiScan</h2>
-<p>Now you need to take the data that we downloaded to your computer and import it into this R file. It sounds complicated, but we can actually do this with a simple line of code.</p>
-<p>If you open the files we downloaded from LegiScan in the previous step, you’ll see it actually includes seven different data tables. For the purposes of this project, we’re only going to be working with three of those: “bills,” “sponsors,” and “people.” Copy and run the code below to import those three tables into this file.</p>
+<p>Now you need to take the data that we downloaded to your computer and import it into this R file. It sounds complicated, but all it takes is a simple line of code.</p>
+<section id="create-your-data-folders" class="level4">
+<h4 data-anchor-id="create-your-data-folders">2.1 Create your data folders</h4>
+<p>If you open the files we downloaded from LegiScan in the previous step, you’ll see it actually includes seven different data tables. For the purposes of this project, we’re only going to be working with three of those: “bills,” “sponsors,” and “people.”</p>
+<p>Create a new code chunk using the keyboard shortcut from above. Copy and run the code below to import those three tables into this file.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a> bills <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data-raw/tx-bills-all/2025-2026_89th_Legislature/csv/bills.csv"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> </span>
@@ -285,6 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>lawmakers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+</section>
 <section id="cleaning-those-tables" class="level2">
 <h2 data-anchor-id="cleaning-those-tables">3. “Cleaning” those tables</h2>
 <p>Oftentimes, data tables aren’t in the best shape when you download them. There might be rows or cells that are missing entries, or there may be columns that aren’t necessary for the analysis you want to do. This is where cleaning comes in: you can use code to adjust the table/remove data you don’t need so the final table is much easier to work with.</p>
@@ -295,7 +327,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h5 data-anchor-id="a-view-the-raw-data">A) View the raw data</h5>
 <p>Before we start cleaning up the tables, let’s take another look at what they look like untouched. Run this code to view the table you just imported.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>bills</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>bills </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>add description of what we’re looking at here</p>
 </section>
@@ -303,10 +335,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h5 data-anchor-id="b-remove-unnecessary-columns-and-rename-columns">B) Remove unnecessary columns and rename columns</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>bills_clean <span class="ot">&lt;-</span> bills <span class="sc">|&gt;</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">select</span>(<span class="sc">-</span>session_id, <span class="sc">-</span>status, <span class="sc">-</span>status_desc, <span class="sc">-</span>title, <span class="sc">-</span>committee_id, <span class="sc">-</span>committee, <span class="sc">-</span>last_action_date, <span class="sc">-</span>last_action, <span class="sc">-</span>url, <span class="sc">-</span>state_link) <span class="sc">|&gt;</span> </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">date_filed =</span> status_date)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>bills_clean </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">select</span>(<span class="sc">-</span>session_id, <span class="sc">-</span>url, <span class="sc">-</span>state_link) </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>bills_clean </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add this to analysis file</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>bills_clean <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(status, status_desc) <span class="sc">|&gt;</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">status_type =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(status_type))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Describe what we’re looking at now.</p>
 </section>
@@ -316,17 +354,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="a-view-the-raw-data-1" class="level5">
 <h5 data-anchor-id="a-view-the-raw-data-1">A) View the raw data</h5>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>lawmakers </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lawmakers </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Description of what we’ve got here.</p>
 </section>
 <section id="b-remove-unnecessary-columns-and-rename-columns-1" class="level5">
 <h5 data-anchor-id="b-remove-unnecessary-columns-and-rename-columns-1">B) Remove unnecessary columns and rename columns</h5>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>lawmakers_clean <span class="ot">&lt;-</span> lawmakers <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(people_id, name, party, role, district) </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>lawmakers_clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>lawmakers_clean <span class="ot">&lt;-</span> lawmakers <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(people_id, name, middle_name, suffix, party, role, district) </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>lawmakers_clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Description of what we’re working with now.</p>
 </section>
@@ -336,14 +374,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="a-view-the-raw-data-2" class="level5">
 <h5 data-anchor-id="a-view-the-raw-data-2">A) View the raw data</h5>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sponsors</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sponsors</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="b-remove-unnecessary-columns-and-rename-columns-2" class="level5">
 <h5 data-anchor-id="b-remove-unnecessary-columns-and-rename-columns-2">B) Remove unnecessary columns and rename columns</h5>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sponsors <span class="sc">|&gt;</span> </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>position)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sponsors_clean <span class="ot">&lt;-</span> sponsors <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">spons_position =</span> position)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>sponsors_clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Restate all the changes made.</p>
 </section>
@@ -353,41 +393,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-anchor-id="merge-the-tables-together">4. Merge the tables together</h2>
 <p>Now that we’ve selected the columns we want to work with in each of the three data tables, we need to merge everything together into one big table that we’ll use for our analysis. You’ll notice there are a couple of repeat columns in the tables, such as people_id and bill_id. We’ll want to make sure those only appear once in our big table. Let’s do this in two steps: first, copy the code below to merge the lawmaker and sponsor tables together.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>lawmaker_sponsor <span class="ot">&lt;-</span> <span class="fu">merge</span>(lawmakers_clean, sponsors) <span class="sc">|&gt;</span> </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>position)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>lawmaker_sponsor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>law_spons <span class="ot">&lt;-</span> <span class="fu">merge</span>(lawmakers_clean, sponsors_clean) </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>law_spons</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now lets add the description column and date_filed column from the bills table.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>final_table <span class="ot">&lt;-</span> lawmaker_sponsor <span class="sc">|&gt;</span> </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(bills_clean, <span class="at">by =</span> <span class="fu">join_by</span>(bill_id)) </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>final_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>final_table <span class="ot">&lt;-</span> law_spons <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(bills_clean) <span class="sc">|&gt;</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">mid_init =</span> middle_name) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Great! You should have one data table with the following information:</p>
+<p>Great! You should have one big data table with the following information:</p>
 <ul>
-<li><p>name = lawmaker’s name</p></li>
 <li><p>people_id = the unique number associated with each lawmaker</p></li>
-<li><p>party = political party for each lawmaker</p></li>
+<li><p>name = lawmaker’s first and last name</p></li>
+<li><p>mid_init = lawmaker’s middle initial</p></li>
+<li><p>suffix = lawmaker’s suffix, if applicable</p></li>
+<li><p>party = political party of each lawmaker</p></li>
 <li><p>role = whether the lawmaker is a senator or a representative</p></li>
 <li><p>district = the congressional district associated with each lawmaker</p></li>
 <li><p>bill_id = the unique number associated with a specific bill filed this session</p></li>
-<li><p>date_filed = the date that bill was introduced</p></li>
-<li><p>description = explains what a specific bill aims to do</p></li>
+<li><p>bill_number = standard bill naming in the legislature</p></li>
+<li><p>spons_position = for a specific bill, this number indicates where a lawmaker is in the line of sponsor (ex: “1”=primary sponsor, “7”=seventh sponsor, etc.)</p></li>
+<li><p>status = a numerical representation of where the bill currently sits (ex: “0”=no progress, “1”=Introduced, “2”=Engrossed, “4”=Passed) There is no 3, I don’t know why.</p></li>
+<li><p>status_desc = written description of the status</p></li>
+<li><p>status_date = date a specific bill achieved the corresponding status</p></li>
+<li><p>title = shorter description of bill as written in LegiScan</p></li>
+<li><p>description = longer description of bill as written in LegiScan</p></li>
+<li><p>committee = which Senate/House committee the bill was referred to</p></li>
+<li><p>committee_id = unique code associated with each committee</p></li>
+<li><p>last_action = most recent update to bill as of the date you downloaded the data</p></li>
+<li><p>last_action_date = calendar date of that update</p></li>
 </ul>
+<p>This is a lot of information to work with! We may not end up using every column, but it’s still important to have a full picture of the data available. The table has over 14,000 rows of data, each corresponding with a bill/joint resolution. Now you can see the appeal of sorting through everything in R, rather than manually or in a spreadsheet.</p>
+<p>Add callout note about companion bills</p>
 <p>We’ll be able to quickly sort through all of this information and identify key details about the agendas of Texas lawmakers in the current legislative session. Let’s save this table before we move forward with our analysis.</p>
 </section>
 <section id="saving-the-clean-table" class="level2">
 <h2 data-anchor-id="saving-the-clean-table">5. Saving the clean table</h2>
 <p>Add instructions for creating a data-processed file.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>final_table <span class="sc">|&gt;</span> </span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_rds</span>(<span class="st">"data-processed/bills-89.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>final_table <span class="sc">|&gt;</span> </span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_csv</span>(<span class="st">"data-processed/bills-89.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write_rds</span>(<span class="st">"data-processed/bills-89.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In the next chapter of this toolkit, we’ll brain storm some potential questions about the session and use the data to find some answers.</p>
 
