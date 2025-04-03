@@ -1,10 +1,5 @@
 ---
 title: "Analyzing The Data"
-execute: 
-  output: false
-format: 
-  html:
-    df-print: tibble 
 ---
 
 Before starting a data analysis, it's a good idea to brain dump a series of questions you hope to answer based on the variables you know you're working with. For this toolkit, we're going to answer the following:

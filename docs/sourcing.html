@@ -33,6 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -132,14 +133,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Setting Up</span></a>
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intro to Data Journalism</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro to Data Journalism</span></a>
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting Up</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -192,42 +193,52 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
+   
   <ul>
   <li><a href="#steps-for-downloading" id="toc-steps-for-downloading" class="nav-link active" data-scroll-target="#steps-for-downloading">Steps for downloading</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<div class="quarto-about-solana column-body">
-  <div class="about-entity">
-    <div class="entity-contents">
-      <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Downloading Data from LegiScan</h1>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
+  
+    
   </div>
-</header> 
-      <div class="about-contents"><main class="content" id="quarto-document-content">
+  
+
+
+</header>
+
 
 <p>Include a video tutorial at the top of this page.</p>
 <p>All of the data for this tutorial comes from LegiScan, a real-time and nonpartisan legislative tracking service available to the public. While this project only focuses on data from the Texas Legislature, LegiScan has data sets from all 50 states. The data is updated weekly on Sundays.</p>
 <p>LegiScan is a good example of the type of public database that a data journalist might pull from frequently. There are lots of other resources available online with data from government agencies. If you’re a journalist covering the environment, for example, you might try xyz.</p>
 <section id="steps-for-downloading" class="level3">
-<h3 data-anchor-id="steps-for-downloading">Steps for downloading</h3>
+<h3 class="anchored" data-anchor-id="steps-for-downloading">Steps for downloading</h3>
 <section id="go-to-legiscan.com" class="level4">
-<h4 data-anchor-id="go-to-legiscan.com">1. Go to legiscan.com</h4>
+<h4 class="anchored" data-anchor-id="go-to-legiscan.com">1. Go to legiscan.com</h4>
 </section>
 <section id="create-a-login" class="level4">
-<h4 data-anchor-id="create-a-login">2. Create a login</h4>
+<h4 class="anchored" data-anchor-id="create-a-login">2. Create a login</h4>
 <p>LegiScan requires you to create a username and password to download datasets. This is completely free. Create an account, and then click on the “Datasets” tab at the top of the page.</p>
 </section>
 <section id="filter-for-texas" class="level4">
-<h4 data-anchor-id="filter-for-texas">3. Filter for Texas</h4>
+<h4 class="anchored" data-anchor-id="filter-for-texas">3. Filter for Texas</h4>
 <p>Select “TX” to view all of LegiScan’s data from the Texas Legislature. You’ll see their data goes back to 2010 (the 81st Texas Legislature). For now, we’re just going to focus on the 89th session, which is the current one for 2025-2026.</p>
 </section>
 <section id="download-the-csv-file" class="level4">
-<h4 data-anchor-id="download-the-csv-file">4. Download the CSV file</h4>
+<h4 class="anchored" data-anchor-id="download-the-csv-file">4. Download the CSV file</h4>
 <p>In the top right corner of the data library is a column that says “CSV Basic.” This is the type of file we want to download.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -258,16 +269,13 @@ Tip
 </div>
 </section>
 <section id="take-a-look-at-the-dataset" class="level4">
-<h4 data-anchor-id="take-a-look-at-the-dataset">5. Take a look at the dataset</h4>
+<h4 class="anchored" data-anchor-id="take-a-look-at-the-dataset">5. Take a look at the dataset</h4>
 
 
 </section>
 </section>
-</main></div>
-    </div>
-  </div>
-</div>
- <!-- /main -->
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -288,6 +296,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

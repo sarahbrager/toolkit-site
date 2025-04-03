@@ -10,11 +10,6 @@ format:
     df-print: paged
     code-overflow: wrap
     
-title: "About This Project"
-# add headshot later
-toc: false
-about: 
-  template: solana
 
 
 website:

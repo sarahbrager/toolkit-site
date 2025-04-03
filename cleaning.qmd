@@ -1,7 +1,5 @@
 ---
 title: "Cleaning The Data"
-execute: 
-  output: false
 ---
 
 Some sort of introductory text to what cleaning data even means.
