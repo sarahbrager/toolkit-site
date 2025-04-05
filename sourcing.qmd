@@ -3,25 +3,25 @@ title: "Downloading Data from LegiScan"
 format: html
 ---
 
-Include a video tutorial at the top of this page.
+*Include a video tutorial at the top of this page*
 
-All of the data for this tutorial comes from LegiScan, a real-time and nonpartisan legislative tracking service available to the public. While this project only focuses on data from the Texas Legislature, LegiScan has data sets from all 50 states. The data is updated weekly on Sundays.
+All of the data for this tutorial comes from LegiScan, a real-time and nonpartisan legislative tracking service available to the public. While this project only focuses on data from the Texas Legislature, LegiScan offers data sets from all 50 states. The data is updated weekly on Sundays.
 
 LegiScan is a good example of the type of public database that a data journalist might pull from frequently. There are lots of other resources available online with data from government agencies. If you're a journalist covering the environment, for example, you might try xyz.
 
-### Steps for downloading 
+### Steps for downloading
 
-#### 1. Go to legiscan.com 
+#### 1. Go to legiscan.com
 
-#### 2. Create a login 
+#### 2. Create a login
 
 LegiScan requires you to create a username and password to download datasets. This is completely free. Create an account, and then click on the "Datasets" tab at the top of the page.
 
-#### 3. Filter for Texas 
+#### 3. Filter for Texas
 
 Select "TX" to view all of LegiScan's data from the Texas Legislature. You'll see their data goes back to 2010 (the 81st Texas Legislature). For now, we're just going to focus on the 89th session, which is the current one for 2025-2026.
 
-#### 4. Download the CSV file 
+#### 4. Download the CSV file
 
 In the top right corner of the data library is a column that says "CSV Basic." This is the type of file we want to download.
 
@@ -35,4 +35,4 @@ Click on the red "CSV" button for the 89th session to download the file to your 
 I recommend immediately renaming the folder to something that's easy for you to find later. For example: "tx-bills-89"
 :::
 
-#### 5. Take a look at the dataset 
+#### 5. Take a look at the dataset

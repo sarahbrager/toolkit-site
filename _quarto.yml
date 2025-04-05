@@ -14,6 +14,8 @@ format:
 
 website:
   title: "Reporting on the Texas Legislature: A Data Journalism Toolkit"
+  page-navigation: true
+  bread-crumbs: true
   navbar:
     background: dark
     search: false
