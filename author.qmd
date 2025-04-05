@@ -1,7 +1,18 @@
 ---
 title: "Meet the Author"
-format: html
+image: toolkit-pics/profile-2.JPG
+about: 
+  template: jolla
+  links:
+     - icon: github
+       text: Github
+       href: https://github.com/sarahbrager
+     - icon: linkedin
+       text: LinkedIn
+       href: https://www.linkedin.com/in/sarah-brager/
+     - icon: envelope
+       text: Email
+       href: mailto:sarahbrager@utexas.edu
 ---
 
-
-Sarah Brager is a senior journalism student at The University of Texas at Austin. She created this project as her senior capstone for the Moody College Honors Program and Bridging Disciplines Program at UT, where she's also earning a certificate in public policy studies. She is currently a data journalism fellow with UT's Media Innovation Group. To learn more about Sarah and view her other work, visit her LinkedIn at the top right of this website.
+Sarah Brager is a senior journalism student at The University of Texas at Austin. She created this project as her senior capstone for the Moody College Honors Program and Bridging Disciplines Program at UT, where she's also earning a certificate in public policy studies. She is currently a data journalism fellow with UT's Media Innovation Group. To learn more about Sarah and view her other work, visit her LinkedIn and GitHub profiles.
