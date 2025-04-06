@@ -37,7 +37,7 @@ website:
     contents:
       - text: "Home"
         href: index.qmd
-      - text: "Intro to Data Journalism"
+      - text: "What is Data Journalism?"
         href: introduction.qmd
       - text: "Setting Up"
         href: about.qmd

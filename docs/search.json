@@ -16,7 +16,7 @@
     "section": "",
     "text": "Data journalism, or data-driven storytelling, is a form of journalism where reporters/other members of a news organization sift through large data sets to uncover trends or other newsworthy information, and then present those findings to the public in a digestible way. Simply put, it’s telling the stories found in data. In reality, though, data journalism is much more creative and complex. It can take a variety of forms, including:\n\nDesigning visualizations and interactive news graphics to explain numbers (These can often be embedded within news articles.)\nUsing code to quickly sort through large data sets and pull out the most important information\nReporting investigative stories based on findings from a data analysis (You might find something important that’s been completely overlooked!)\nMachine learning and AI engineering for newsrooms (This method is more computer science-oriented.)\n\nExamples of data journalism:",
     "crumbs": [
-      "Intro to Data Journalism"
+      "What is Data Journalism?"
     ]
   },
   {
@@ -44,7 +44,7 @@
     "href": "sourcing.html",
     "title": "Downloading Data from LegiScan",
     "section": "",
-    "text": "Include a video tutorial at the top of this page\nAll of the data for this tutorial comes from LegiScan, a real-time and nonpartisan legislative tracking service available to the public. While this project only focuses on data from the Texas Legislature, LegiScan offers data sets from all 50 states. The data is updated weekly on Sundays.\nLegiScan is a good example of the type of public database that a data journalist might pull from frequently. There are lots of other resources available online with data from government agencies. If you’re a journalist covering the environment, for example, you might try xyz.\n\nSteps for downloading\n\n1. Go to legiscan.com\n\n\n2. Create a login\nLegiScan requires you to create a username and password to download datasets. This is completely free. Create an account, and then click on the “Datasets” tab at the top of the page.\n\n\n3. Filter for Texas\nSelect “TX” to view all of LegiScan’s data from the Texas Legislature. You’ll see their data goes back to 2010 (the 81st Texas Legislature). For now, we’re just going to focus on the 89th session, which is the current one for 2025-2026.\n\n\n4. Download the CSV file\nIn the top right corner of the data library is a column that says “CSV Basic.” This is the type of file we want to download.\n\n\n\n\n\n\nNote\n\n\n\nCSV stands for “comma separated values,” which is just one of many ways a dataset can be stored. This is a pretty common file type for working with data, so if you’re ever downloading data from other sources, you’ll likely see this as an option.\n\n\nClick on the red “CSV” button for the 89th session to download the file to your computer. It should be a compressed folder filled with multiple csv files.\n\n\n\n\n\n\nTip\n\n\n\nI recommend immediately renaming the folder to something that’s easy for you to find later. For example: “tx-bills-89”\n\n\n\n\n5. Take a look at the dataset",
+    "text": "Include a video tutorial at the top of this page\nAll of the data for this tutorial comes from LegiScan, a real-time and nonpartisan legislative tracking service available to the public. While this project only focuses on data from the Texas Legislature, LegiScan offers data sets from all 50 states. The data is updated weekly on Sundays.\nLegiScan is a good example of the type of public database that a data journalist might pull from frequently. There are lots of other resources available online with data from government agencies. If you’re a journalist covering the environment, for example, you might try xyz.\n\nSteps for downloading\n\n1. Go to legiscan.com\n\n\n2. Create an account\nLegiScan requires you to create a username and password to download datasets. This is completely free. Create an account, and then click on the “Datasets” tab at the top of the page.\n\n\n\n3. Filter for Texas\nSelect “TX” to view all of LegiScan’s data from the Texas Legislature. You’ll see their data goes back to 2010 (the 81st Texas Legislature). For now, we’re just going to focus on the 89th session, which is the current one for 2025-2026.\n\n\n\n4. Download the CSV file\nIn the top right corner of the data library is a column that says “CSV Basic.” This is the type of file we want to download.\n\n\n\n\n\n\nNote\n\n\n\nCSV stands for “comma separated values,” which is just one of many ways a dataset can be stored. This is a pretty common file type for working with data, so if you’re ever downloading data from other sources, you’ll likely see this as an option.\n\n\nClick on the red “CSV” button for the 89th session to download the file to your computer. It should be a compressed folder filled with multiple csv files.\n\n\n\n\n\n\n\nTip\n\n\n\nI recommend immediately renaming the folder to something that’s easy for you to find later. For example: “tx-bills-89”\n\n\n\n\n5. Take a look at the dataset",
     "crumbs": [
       "Sourcing the Data"
     ]
@@ -182,9 +182,9 @@
   {
     "objectID": "author.html",
     "href": "author.html",
-    "title": "Meet the Author",
+    "title": "Sarah Brager",
     "section": "",
-    "text": "Sarah Brager is a senior journalism student at The University of Texas at Austin. She created this project as her senior capstone for the Moody College Honors Program and Bridging Disciplines Program at UT, where she’s also earning a certificate in public policy studies. She is currently a data journalism fellow with UT’s Media Innovation Group. To learn more about Sarah and view her other work, visit her LinkedIn and GitHub profiles.",
+    "text": "Sarah Brager is a graduating senior at The University of Texas at Austin. She created this project as her senior honors capstone. She is currently a data journalism fellow with the UT Media Innovation Group, which is part of the Dallas Morning News Journalism Innovation Endowment.\nWith an interest in political and environmental reporting, Sarah plans to keep using data as an investigative tool in her career. To learn more about Sarah and view her other work, visit her LinkedIn and GitHub profiles.",
     "crumbs": [
       "Meet the Author"
     ]
@@ -207,6 +207,26 @@
     "text": "Toolkit objectives\n\nBy the end of this tutorial, you will have learned how to:",
     "crumbs": [
       "Home"
+    ]
+  },
+  {
+    "objectID": "author.html#education",
+    "href": "author.html#education",
+    "title": "Sarah Brager",
+    "section": "Education",
+    "text": "Education\nThe University of Texas at Austin | Aug 2021 - May 2025\nBachelor of Journalism | Certificate in Public Policy Studies\nMoody College Honors Program | Bridging Disciplines Program",
+    "crumbs": [
+      "Meet the Author"
+    ]
+  },
+  {
+    "objectID": "author.html#about",
+    "href": "author.html#about",
+    "title": "Sarah Brager",
+    "section": "",
+    "text": "Sarah Brager is a graduating senior at The University of Texas at Austin. She created this project as her senior honors capstone. She is currently a data journalism fellow with the UT Media Innovation Group, which is part of the Dallas Morning News Journalism Innovation Endowment.\nWith an interest in political and environmental reporting, Sarah plans to keep using data as an investigative tool in her career. To learn more about Sarah and view her other work, visit her LinkedIn and GitHub profiles.",
+    "crumbs": [
+      "Meet the Author"
     ]
   }
 ]
