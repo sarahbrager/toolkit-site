@@ -50,7 +50,7 @@ These are the 4 main windows within any R project: file workspace (top left), co
 
 #### **4. Adding to your library**
 
-##### **First, folders** 
+##### **First, folders**
 
 Before we download the data, let's create two folders where you'll drop the files. This is a good practice for keeping your files organized in any R project you work in. In your files window (bottom right), click the icon in the top left corner to create and name a new folder. Title the first one "data-raw" and then create a second folder called "data-processed"
 

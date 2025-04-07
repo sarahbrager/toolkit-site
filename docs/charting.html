@@ -115,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./charting.html">Making Simple News Graphics</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./charting.html">Visualizing the Data</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -136,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro to Data Journalism</span></a>
+ <span class="menu-text">What is Data Journalism?</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -166,13 +166,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./charting.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Making Simple News Graphics</span></a>
+ <span class="menu-text">Visualizing the Data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting With This Data</span></a>
+ <span class="menu-text">Reporting With the Data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -192,8 +192,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#working-in-datawrapper" id="toc-working-in-datawrapper" class="nav-link active" data-scroll-target="#working-in-datawrapper">Working in Datawrapper</a></li>
+  <li><a href="#what-you-will-build" id="toc-what-you-will-build" class="nav-link" data-scroll-target="#what-you-will-build">What you will build</a></li>
+  <li><a href="#create-a-datawrapper-account" id="toc-create-a-datawrapper-account" class="nav-link" data-scroll-target="#create-a-datawrapper-account">Create a Datawrapper account</a></li>
+  <li><a href="#step-by-step-tutorials" id="toc-step-by-step-tutorials" class="nav-link" data-scroll-target="#step-by-step-tutorials">Step-by-step tutorials</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -217,9 +226,60 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is a markdown with instructions for using Datawrapper to make three simple charts from the data analysis.</p>
+<p>Now that we’ve found some key stats from our analysis of legislative bills, we’re going to use data to make two different types of visualizations: <strong>a bar chart and a choropleth map.</strong> These are both very common ways of presenting data within news stories because they’re engaging, informative and visually pleasing.</p>
+<p>For this lesson, you’re going to use the table of top bill sponsors that you saved in the previous step to build a bar chart. Then, you’ll use the other data set of bills filed per state senator to build the map. These are just two of many possible ways to visualize all the data you have at your fingertips.</p>
+<section id="working-in-datawrapper" class="level3">
+<h3 class="anchored" data-anchor-id="working-in-datawrapper">Working in Datawrapper</h3>
+<p><a href="https://www.datawrapper.de/">Datawrapper</a> is a free tool that lets you upload or manually enter data and personalize the visualizations (charts, maps, and tables) with no coding required! It’s pretty user-friendly, and it produces clean, professional graphics similar to what you’d see on a news website.</p>
+<section id="datawrapper-academy" class="level4">
+<h4 class="anchored" data-anchor-id="datawrapper-academy"><u>Datawrapper Academy</u></h4>
+<p>Datawrapper has a great learning dashboard, called <a href="https://academy.datawrapper.de/">Datawrapper Academy</a>, that walks you through how to design all the different types of visualizations on the website. I <em>highly</em> recommend you explore this resource, especially since we’re only going to walk through two types of graphics. Bookmark it and return to it the next time you want to build a chart for a news story or some other data project!</p>
+</section>
+<section id="other-tools-for-visualizations" class="level4">
+<h4 class="anchored" data-anchor-id="other-tools-for-visualizations"><u>Other tools for visualizations</u></h4>
+<p><a href="https://public.tableau.com/app/discover">Tableau Public</a> and <a href="https://flourish.studio/">Flourish</a> are also popular options for designing charts, but they’re a bit more complex in my opinion.</p>
+</section>
+</section>
+<section id="what-you-will-build" class="level3">
+<h3 class="anchored" data-anchor-id="what-you-will-build">What you will build</h3>
+<p>Take a peek at the two finished charts below to get a sense of what you’re going to build.</p>
+<p><strong>1. A bar chart of the top 10 bill sponsors from the session:</strong></p>
+<iframe title="Top sponsors in the 89th Texas Legislative Session" aria-label="Bar Chart" id="datawrapper-chart-bVCvf" src="https://datawrapper.dwcdn.net/bVCvf/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="476" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
+</script>
+<p><strong>2. An interactive map of Texas senate districts + bills filed per state senator:</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Tip">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Click on a district to see the senator’s name and the number of bills/joint resolutions they sponsored this session. Also note the zoom feature in the lower right corner.</p>
+</div>
+</div>
+<iframe title="Which Texas senators sponsored the most legislation this session, and who do they represent?&nbsp;" aria-label="Map" id="datawrapper-chart-59Y00" src="https://datawrapper.dwcdn.net/59Y00/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="804" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
+</script>
+</section>
+<section id="create-a-datawrapper-account" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-datawrapper-account">Create a Datawrapper account</h3>
+<p>Go to datawrapper.de and click “Start creating” to make your free account. Once you’ve done that, you’re ready to start following along with the video tutorials and get designing!</p>
+</section>
+<section id="step-by-step-tutorials" class="level3">
+<h3 class="anchored" data-anchor-id="step-by-step-tutorials">Step-by-step tutorials</h3>
+<section id="the-bar-chart" class="level4">
+<h4 class="anchored" data-anchor-id="the-bar-chart"><strong>The bar chart</strong></h4>
+<p><em>video tutorial for the first chart</em></p>
+</section>
+<section id="the-map" class="level4">
+<h4 class="anchored" data-anchor-id="the-map"><strong>The map</strong></h4>
+<p><em>video tutorial for the second chart</em></p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -646,8 +706,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./reporting.html" class="pagination-link" aria-label="Reporting With This Data">
-        <span class="nav-page-text">Reporting With This Data</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./reporting.html" class="pagination-link" aria-label="Reporting With the Data">
+        <span class="nav-page-text">Reporting With the Data</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

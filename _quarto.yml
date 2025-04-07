@@ -47,9 +47,9 @@ website:
         href: cleaning.qmd
       - text: "Analyzing the Data"
         href: analysis.qmd
-      - text: "Making Simple News Graphics"
+      - text: "Visualizing the Data"
         href: charting.qmd
-      - text: "Reporting With This Data"
+      - text: "Reporting With the Data"
         href: reporting.qmd
       - text: "Additional Resources"
         href: resources.qmd

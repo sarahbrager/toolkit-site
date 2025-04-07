@@ -3,4 +3,54 @@ title: "Charting The Data"
 format: html
 ---
 
-This is a markdown with instructions for using Datawrapper to make three simple charts from the data analysis.
+Now that we've found some key stats from our analysis of legislative bills, we're going to use data to make two different types of visualizations: **a bar chart and a choropleth map.** These are both very common ways of presenting data within news stories because they're engaging, informative and visually pleasing.
+
+For this lesson, you're going to use the table of top bill sponsors that you saved in the previous step to build a bar chart. Then, you'll use the other data set of bills filed per state senator to build the map. These are just two of many possible ways to visualize all the data you have at your fingertips.
+
+### Working in Datawrapper
+
+[Datawrapper](https://www.datawrapper.de/) is a free tool that lets you upload or manually enter data and personalize the visualizations (charts, maps, and tables) with no coding required! It's pretty user-friendly, and it produces clean, professional graphics similar to what you'd see on a news website.
+
+#### [Datawrapper Academy]{.underline}
+
+Datawrapper has a great learning dashboard, called [Datawrapper Academy](https://academy.datawrapper.de/), that walks you through how to design all the different types of visualizations on the website. I *highly* recommend you explore this resource, especially since we're only going to walk through two types of graphics. Bookmark it and return to it the next time you want to build a chart for a news story or some other data project!
+
+#### [Other tools for visualizations]{.underline}
+
+[Tableau Public](https://public.tableau.com/app/discover) and [Flourish](https://flourish.studio/) are also popular options for designing charts, but they're a bit more complex in my opinion.
+
+### What you will build
+
+Take a peek at the two finished charts below to get a sense of what you're going to build.
+
+**1. A bar chart of the top 10 bill sponsors from the session:**
+
+```{=html}
+<iframe title="Top sponsors in the 89th Texas Legislative Session" aria-label="Bar Chart" id="datawrapper-chart-bVCvf" src="https://datawrapper.dwcdn.net/bVCvf/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="476" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
+</script>
+```
+
+**2. An interactive map of Texas senate districts + bills filed per state senator:**
+
+::: {.callout-tip title="Tip"}
+Click on a district to see the senator's name and the number of bills/joint resolutions they sponsored this session. Also note the zoom feature in the lower right corner.
+:::
+
+```{=html}
+<iframe title="Which Texas senators sponsored the most legislation this session, and who do they represent? " aria-label="Map" id="datawrapper-chart-59Y00" src="https://datawrapper.dwcdn.net/59Y00/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="804" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
+</script>
+```
+
+### Create a Datawrapper account
+
+Go to datawrapper.de and click "Start creating" to make your free account. Once you've done that, you're ready to start following along with the video tutorials and get designing!
+
+### Step-by-step tutorials 
+
+#### **The bar chart** 
+
+*video tutorial for the first chart*
+
+#### **The map** 
+
+*video tutorial for the second chart*
