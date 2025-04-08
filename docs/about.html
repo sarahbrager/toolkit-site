@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a84dc14b8fccb26084f42d22441726c3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-899415b1d55dc66ab297ee27e61ae28c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -166,13 +166,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./charting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Making Simple News Graphics</span></a>
+ <span class="menu-text">Visualizing the Data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting With This Data</span></a>
+ <span class="menu-text">Reporting With the Data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -233,6 +233,10 @@ ul.task-list li input[type="checkbox"] {
 <h4 class="anchored" data-anchor-id="do-i-need-coding-experience-to-use-this-toolkit"><strong>Do I need coding experience to use this toolkit?</strong></h4>
 <p>Nope! An interest in stats is helpful, but this tutorial is designed for people who are new to data analysis and want an example of how news reporters can use data in their work. It may take a minute to adjust to the interface and style of R, but this lesson keeps things simple and user-friendly.</p>
 </section>
+<section id="additional-resources" class="level4">
+<h4 class="anchored" data-anchor-id="additional-resources"><u>Additional resources</u></h4>
+<p>If you decide after this tutorial that you want to learn more R programming skills, check out these free R courses on <a href="https://www.codecademy.com/catalog/language/r?g_network=g&amp;g_productchannel=&amp;g_adid=699378987796&amp;g_locinterest=&amp;g_keyword=learn%20r&amp;g_acctid=243-039-7011&amp;g_adtype=&amp;g_keywordid=kwd-298045963101&amp;g_ifcreative=&amp;g_campaign=account&amp;g_locphysical=9198393&amp;g_adgroupid=165097891129&amp;g_productid=&amp;g_source=%7Bsourceid%7D&amp;g_merchantid=&amp;g_placement=&amp;g_partition=&amp;g_campaignid=21287608736&amp;g_ifproduct=&amp;utm_id=t_kwd-298045963101:ag_165097891129:cp_21287608736:n_g:d_c&amp;utm_source=google&amp;utm_medium=paid-search&amp;utm_term=learn%20r&amp;utm_campaign=US_-_Exact&amp;utm_content=699378987796&amp;g_adtype=search&amp;g_acctid=243-039-7011&amp;gad_source=1&amp;gclid=CjwKCAjwktO_BhBrEiwAV70jXh5NFq-Nvw8PiqoUM4KNkTu32W0JTGEn_z3YkO9SWvSHkr20GXnRshoCxVwQAvD_BwE">Code Academy</a>. We’ll go over some of those skills in this toolkit, but not all of them. If you want to build on what you’ll learn today, check out the Code Academy library (you can earn certifications for your resume!)</p>
+</section>
 </section>
 <section id="first-steps" class="level3">
 <h3 class="anchored" data-anchor-id="first-steps">First steps</h3>
@@ -240,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
 <h4 class="anchored" data-anchor-id="go-to-posit.cloud-and-create-an-account"><strong>1. Go to posit.cloud and create an account</strong></h4>
 <p>This is an online version of R, meaning you’ll be able to work with the same interface as the R desktop application but in your web browser. If you already R Studio installed on your computer or would prefer to use the desktop version, that will also work for this toolkit. The instructions will work either way. If you plan on pursuing future data projects beyond this tutorial, I do recommend installing R Studio because you will eventually hit a paywall in posit.cloud.</p>
 <section id="installing-r-studio-optional" class="level5">
-<h5 class="anchored" data-anchor-id="installing-r-studio-optional"><strong>Installing R Studio (optional)</strong></h5>
+<h5 class="anchored" data-anchor-id="installing-r-studio-optional"><u><strong>Installing R Studio (optional)</strong></u></h5>
 <p>tktk instructions for that</p>
 <p>If you want to keep things simple, though, posit.cloud will do just fine! If you decide you want to install R Studio in the future, you can always come back to these instructions.</p>
 </section>
@@ -278,13 +282,13 @@ Note
 <section id="adding-to-your-library" class="level4">
 <h4 class="anchored" data-anchor-id="adding-to-your-library"><strong>4. Adding to your library</strong></h4>
 <section id="first-folders" class="level5">
-<h5 class="anchored" data-anchor-id="first-folders"><strong>First, folders</strong></h5>
+<h5 class="anchored" data-anchor-id="first-folders"><u><strong>First, folders</strong></u></h5>
 <p>Before we download the data, let’s create two folders where you’ll drop the files. This is a good practice for keeping your files organized in any R project you work in. In your files window (bottom right), click the icon in the top left corner to create and name a new folder. Title the first one “data-raw” and then create a second folder called “data-processed”</p>
 <p><img src="toolkit-pics/creating-folders.png" class="img-fluid"></p>
 <p>Once you’ve created those, you’ll see them appear in your files list. The data-raw folder is where you’ll eventually put the unedited dataset that we’re going to download in the next step. Any data that you clean up/edit should be stored in the data-processed folder. It’s always good to keep a copy of the original data separate from the version that we’re going to edit and analyze, hence the two folders. Keep this in mind for any future data projects you decide to pursue!</p>
 </section>
 <section id="now-the-quarto-files" class="level5">
-<h5 class="anchored" data-anchor-id="now-the-quarto-files"><strong>Now, the Quarto files</strong></h5>
+<h5 class="anchored" data-anchor-id="now-the-quarto-files"><u><strong>Now, the Quarto files</strong></u></h5>
 <p>We’re also going to create two files inside which we’ll run code to analyze the data. Click the new file icon and select “Quarto Document.” Name one “cleaning.qmd” and then create another and call it “analysis.qmd.” Both of those should appear in your files list. We’ll come back to these later on in the tutorial.</p>
 <p><img src="toolkit-pics/creating-files.png" class="img-fluid"></p>
 </section>

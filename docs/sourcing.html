@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a84dc14b8fccb26084f42d22441726c3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-899415b1d55dc66ab297ee27e61ae28c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -166,13 +166,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./charting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Making Simple News Graphics</span></a>
+ <span class="menu-text">Visualizing the Data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting With This Data</span></a>
+ <span class="menu-text">Reporting With the Data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -197,7 +197,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#steps-for-downloading" id="toc-steps-for-downloading" class="nav-link active" data-scroll-target="#steps-for-downloading">Steps for downloading</a></li>
+  <li><a href="#our-data-source" id="toc-our-data-source" class="nav-link active" data-scroll-target="#our-data-source">Our data source</a></li>
+  <li><a href="#steps-for-downloading" id="toc-steps-for-downloading" class="nav-link" data-scroll-target="#steps-for-downloading">Steps for downloading</a></li>
+  <li><a href="#take-a-look-at-the-data" id="toc-take-a-look-at-the-data" class="nav-link" data-scroll-target="#take-a-look-at-the-data">Take a look at the data</a></li>
+  <li><a href="#add-the-files-to-your-r-project" id="toc-add-the-files-to-your-r-project" class="nav-link" data-scroll-target="#add-the-files-to-your-r-project">Add the files to your R project</a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
   </ul>
 </nav>
     </div>
@@ -224,8 +228,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p><em>Include a video tutorial at the top of this page</em></p>
+<section id="our-data-source" class="level3">
+<h3 class="anchored" data-anchor-id="our-data-source">Our data source</h3>
 <p>All of the data for this tutorial comes from <a href="https://legiscan.com/datasets">LegiScan</a>, a real-time and nonpartisan legislative tracking service available to the public. While this project only focuses on data from the Texas Legislature, LegiScan offers data sets from all 50 states. The data is updated weekly on Sundays.</p>
-<p>LegiScan is a good example of the type of public database that a data journalist might pull from frequently. There are lots of other resources available online with data from government agencies. If you’re a journalist covering the environment, for example, you might try xyz.</p>
+<p>LegiScan is a good example of the type of public database that a data journalist might pull from frequently. There are lots of other resources available online with data from government agencies. If you’re a journalist covering the environment, for example, you might try the <a href="https://www.epa.gov/data">EPA’s Open Data Portal</a>. If you’re a local government reporter, you might pull public records from your city’s database, like the <a href="https://data.austintexas.gov/">City of Austin’s portal</a>. And then there are more general community databases, like <a href="https://www.kaggle.com/datasets">Kaggle</a>, which lets you filter by topic.</p>
+<p>Now let’s get into the Texas Lege data!</p>
+</section>
 <section id="steps-for-downloading" class="level3">
 <h3 class="anchored" data-anchor-id="steps-for-downloading">Steps for downloading</h3>
 <section id="go-to-legiscan.com" class="level4">
@@ -269,15 +277,36 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>I recommend immediately renaming the folder to something that’s easy for you to find later. For example: “tx-bills-89”</p>
+<p>I recommend immediately renaming the folder to something that makes sense for the topic and is easy to find later on your computer. For example: “<strong>tx-bills-89</strong>”</p>
 </div>
 </div>
 </section>
-<section id="take-a-look-at-the-dataset" class="level4">
-<h4 class="anchored" data-anchor-id="take-a-look-at-the-dataset"><strong>5. Take a look at the dataset</strong></h4>
-
-
 </section>
+<section id="take-a-look-at-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="take-a-look-at-the-data">Take a look at the data</h3>
+<p>Open the zip file that was downloaded to your computer and take a look at the different files inside. Notice that you actually get 7 different CSVs when you download from LegiScan. You can see when the data was last updated by looking at the Date Modified column. No need to go through each file now, we’ll start looking at those in the next section.</p>
+<p><img src="toolkit-pics/zip-view.png" class="img-fluid"></p>
+</section>
+<section id="add-the-files-to-your-r-project" class="level3">
+<h3 class="anchored" data-anchor-id="add-the-files-to-your-r-project">Add the files to your R project</h3>
+<p>Go back to your project in posit.cloud and click on the Upload button in the bottom right window.</p>
+<p><img src="toolkit-pics/upload-data.png" class="img-fluid"></p>
+<p>A little window will pop up asking you to choose the files from your computer. In this tutorial, <strong>we’re just going to use three of the CSVs: bills, people, and sponsors</strong>. Add those to your project one at a time:</p>
+<ul>
+<li><p>Click on Choose File and select one of the CSVs.</p></li>
+<li><p>Where it says target directory, click on browse and select your data-raw folder (to keep things organized). Hit OK.</p></li>
+<li><p>Do the same thing for the second and third CSV files.</p></li>
+<li><p>Add the README file to your project as well. We’ll take a look at that in the next section. No need to add this one to the data-raw folder.</p></li>
+</ul>
+<p><img src="toolkit-pics/directory.png" class="img-fluid"></p>
+<p>Now you should see all three datasets inside your data-raw folder when you click on it. To exit out of the folder, click on the two little dots next to the green arrow.</p>
+</section>
+<section id="recap" class="level3">
+<h3 class="anchored" data-anchor-id="recap">Recap</h3>
+<p>In this section, you learned how to download data from LegiScan and view the files on your computer.</p>
+<p>Next, you’re going to start coding!</p>
+
+
 </section>
 
 </main> <!-- /main -->

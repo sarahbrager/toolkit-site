@@ -5,15 +5,19 @@ format: html
 
 *Include a video tutorial at the top of this page*
 
+### Our data source
+
 All of the data for this tutorial comes from [LegiScan](https://legiscan.com/datasets), a real-time and nonpartisan legislative tracking service available to the public. While this project only focuses on data from the Texas Legislature, LegiScan offers data sets from all 50 states. The data is updated weekly on Sundays.
 
-LegiScan is a good example of the type of public database that a data journalist might pull from frequently. There are lots of other resources available online with data from government agencies. If you're a journalist covering the environment, for example, you might try xyz.
+LegiScan is a good example of the type of public database that a data journalist might pull from frequently. There are lots of other resources available online with data from government agencies. If you're a journalist covering the environment, for example, you might try the [EPA's Open Data Portal](https://www.epa.gov/data). If you're a local government reporter, you might pull public records from your city's database, like the [City of Austin's portal](https://data.austintexas.gov/). And then there are more general community databases, like [Kaggle](https://www.kaggle.com/datasets), which lets you filter by topic.
+
+Now let's get into the Texas Lege data!
 
 ### Steps for downloading
 
 #### **1. Go to [legiscan.com](https://legiscan.com/datasets)**
 
-#### **2. Create an account** 
+#### **2. Create an account**
 
 LegiScan requires you to create a username and password to download datasets. This is completely free. Create an account, and then click on the "Datasets" tab at the top of the page.
 
@@ -38,7 +42,37 @@ Click on the red "CSV" button for the 89th session to download the file to your 
 ![](toolkit-pics/download.png)
 
 ::: {.callout-tip title="Tip"}
-I recommend immediately renaming the folder to something that's easy for you to find later. For example: "tx-bills-89"
+I recommend immediately renaming the folder to something that makes sense for the topic and is easy to find later on your computer. For example: "**tx-bills-89**"
 :::
 
-#### **5. Take a look at the dataset**
+### Take a look at the data
+
+Open the zip file that was downloaded to your computer and take a look at the different files inside. Notice that you actually get 7 different CSVs when you download from LegiScan. You can see when the data was last updated by looking at the Date Modified column. No need to go through each file now, we'll start looking at those in the next section.
+
+![](toolkit-pics/zip-view.png)
+
+### Add the files to your R project
+
+Go back to your project in posit.cloud and click on the Upload button in the bottom right window.
+
+![](toolkit-pics/upload-data.png)
+
+A little window will pop up asking you to choose the files from your computer. In this tutorial, **we're just going to use three of the CSVs: bills, people, and sponsors**. Add those to your project one at a time:
+
+-   Click on Choose File and select one of the CSVs.
+
+-   Where it says target directory, click on browse and select your data-raw folder (to keep things organized). Hit OK.
+
+-   Do the same thing for the second and third CSV files.
+
+-   Add the README file to your project as well. We'll take a look at that in the next section. No need to add this one to the data-raw folder.
+
+![](toolkit-pics/directory.png)
+
+Now you should see all three datasets inside your data-raw folder when you click on it. To exit out of the folder, click on the two little dots next to the green arrow.
+
+### Recap
+
+In this section, you learned how to download data from LegiScan and view the files on your computer.
+
+Next, you're going to start coding!
