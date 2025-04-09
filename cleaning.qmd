@@ -6,10 +6,16 @@ Some sort of introductory text to what cleaning data even means.
 
 ## 1. Setup
 
-First, we need to load the packages that are going to help facilitate the data analysis. You don't need to worry about what each package does, but this is an important setup step that allows us to use specific functions later on. I always include these three at the top of every R file.
+First, we need to load the packages that are going to help facilitate the data analysis. You don't need to worry about what each package does, but this is an important setup step that allows us to use specific functions later on. I always include **tidyverse and janitor** at the top of every R file.
 
-::: {.callout-note title="Important"}
-Add a "code chunk" to your file by hitting Command+Option+i on the keyboard. All of our code will be run within these chunks, so get used to this keyboard shortcut!
+If you want to learn more about what each of those packages does, you can read about them [here](https://www.tidyverse.org/packages/) and [here](https://www.rdocumentation.org/packages/janitor/versions/2.2.1). But again, not super necessary at the moment.
+
+#### [Installing the packages]{.underline} 
+
+#### [Loading them in the R file]{.underline} 
+
+::: {.callout-tip title="Tip"}
+Add a "code chunk" to your file by hitting **Command+Option+i** on the keyboard. You'll run all of your code within these chunks, so get used to this keyboard shortcut!
 :::
 
 Copy and paste the code below and "run" it by hitting the green play button in the top right of your code chunk.

@@ -10,10 +10,10 @@ An introduction to data journalism for political reporting including tips for so
 This website was made with Quarto. It is subject to updates. To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 :::
 
-## About this project 
+## About this project
 
 ### 
 
-## Toolkit objectives 
+## Toolkit objectives
 
-#### By the end of this tutorial, you will have learned how to: 
+#### By the end of this tutorial, you will have learned how to:
