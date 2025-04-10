@@ -220,11 +220,11 @@ Amazing! You should have one big data table with the following information:
 
 -   bill_number = standard bill naming in the legislature
 
--   spons_position = for a specific bill, this number indicates where a lawmaker is in the line of sponsor (ex: "1"=primary sponsor, "7"=seventh sponsor, etc.)
+-   spons_position = for a specific bill, this number indicates where a lawmaker is in the line of sponsors
 
--   status = a numerical representation of where the bill currently sits (ex: "0"=no progress, "1"=Introduced, "2"=Engrossed, "4"=Passed) There is no 3, I don't know why.
+-   status_desc = each bill's progress in the session (as of date of download); No progress, Introduced, Engrossed, or Passed
 
--   status_desc = written description of the status
+-   status = numerical representation of a bill's status
 
 -   status_date = date a specific bill achieved the corresponding status
 
@@ -240,21 +240,41 @@ Amazing! You should have one big data table with the following information:
 
 -   last_action_date = calendar date of that update
 
-Phew! This is a lot of information to work with. We may not end up using every column, but it's still important to have a full picture of the data available. The table has over 14,000 rows of data, each corresponding with a bill/joint resolution. Now you can see the appeal of sorting through everything in R, rather than manually or in a spreadsheet.
+Phew! This is a lot of data to work with. We may not end up using everything, but it's still important to have a full picture of the data available. The table has over 10,000 rows of data, each corresponding with a bill/joint resolution. Now you can see the appeal of sorting through everything in R, rather than manually or in a spreadsheet.
 
 ::: {.callout-note Title="Note"}
-There aren't acutally 14,000 unique bills in session because some of those are "companion bills" which are the same exact bill, but one is introduced in the House and the other is introduced in the Senate.
+There aren't actually that many *unique* bills in session because some of because some of those are "companion bills," meaning two identical bills, one filed in the House and one filed in the Senate.
 :::
-
-We'll be able to quickly sort through all of this information and identify key details about the agendas of Texas lawmakers in the current legislative session. Let's save this table before we move forward with our analysis.
 
 ## Save the clean table
 
-Add instructions for creating a data-processed file.
+Before we move on to the analysis, you need to save the final table to your data-processed folder. To do this, you're going to tell R to create an Rds file, which saves final_table object you created earlier. Use the write_rds function, and inside the parenthesis, include the location (data-processed folder) and a name for your new rds file. I chose to name mine "bills-89" but feel free to name yours something else as long as it makes sense. The code looks like this:
 
 ```{r}
 final_table |> 
   write_rds("data-processed/bills-89.rds")
 ```
 
-In the next chapter of this toolkit, we'll brain storm some potential questions about the session and use the data to find some answers.
+Nothing appears when you run it, but if you click into your data-processed folder, you should see the Rds file.
+
+## Recap
+
+This section had *a lot* of information! Here are the key takeaways:
+
+-   README files are helpful resources to learn what's included in a dataset.
+
+-   Setup is an important first step for running code. You learned how to install packages in your console and load those into your R file using the [library()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/library) function.
+
+-   You need to tell R which file you want it to read and spit out. Use the [read_csv](https://www.rdocumentation.org/packages/qtl2/versions/0.32/topics/read_csv) function and include a direct path to the location of your file.
+
+-   Clean up data using a couple helpful functions:
+
+    -   [select()](https://www.rdocumentation.org/packages/dplyr/versions/0.7.3/topics/select) lets you indicate which columns you do or don't want to include
+
+    -   [rename()](https://dplyr.tidyverse.org/reference/rename.html) lets you change the column names to whatever you prefer
+
+-   Combine columns from different tables using [merge()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/merge)
+
+-   Save objects in an Rds file using write_rds, and make sure to direct these to your data-processed folder.
+
+In the next section, we'll brain storm some questions about the Texas Legislative Session and try to answer them with some simple data computations.
