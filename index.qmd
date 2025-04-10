@@ -1,19 +1,35 @@
 ---
-title: "Reporting on the Texas Legislature: A Data Journalism Toolkit"
+title: "Reporting on the Texas Legislature Using Data: A Digital Toolkit for Journalists"
 ---
 
-An introduction to data journalism for political reporting including tips for sourcing raw data, using simple code for data analysis, and generating innovative storytelling ideas from the analysis.
-
-::: {.callout-note appearance="simple"}
-## Note
-
-This website was made with Quarto. It is subject to updates. To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-:::
+This toolkit offers an **introduction to data analysis for news reporting**, with step-by-step tutorials for downloading data, analyzing it in R, making different visualizations, and brainstorming potential news stories based on the findings. All of the exercises in this lesson center around one dataset of Texas legislative bills from the 89th session, but the skills taught throughout the tutorial can apply to other data analysis projects.
 
 ## About this project
 
-### 
+#### [Who is this toolkit for?]{.underline} 
+
+Anyone who wants to learn to work with numbers! While the tutorial is geared towards journalists (both students and professionals), anyone who wants to practice using R can benefit from the lesson. Maybe you're not a data journalist/not interested in a data career, but these are still great digital skills for anyone who does research or works with large spreadsheets. Also a plus if you're a government/politics nerd because that's the focus of our data today.
+
+::: {.callout-note Title="Note"}
+If you already have intermediate experience using R for data analysis, this tutorial will likely be too easy for you. But feel free to jump around in the lesson or run your own computations with the dataset!
+:::
+
+#### [Who created this lesson?]{.underline} 
+
+This toolkit was **created by Sarah Brager**, a graduating journalism and public policy student at the University of Texas at Austin. She designed this project for her senior honors capstone. To learn more about Sarah, visit the "Meet the Author" page on the left sidebar.
 
 ## Toolkit objectives
 
-#### By the end of this tutorial, you will have learned how to:
+#### [By the end of this tutorial, you will have:]{.underline}
+
+-   Learned more about data journalism practices
+
+-   Familiarized yourself with working in R
+
+-   Gained tips for finding and downloading public data
+
+-   Used code to analyze the data and note important trends
+
+-   Convey some of those trends in two types of charts
+
+-   Brainstormed potential ways to use this data in news production

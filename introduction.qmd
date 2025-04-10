@@ -7,7 +7,7 @@ format: html
 
 Data journalism, or data-driven storytelling, is a form of journalism that involves sifting through large data sets to uncover trend and answer questions, and then presenting those findings to the public as you would any other type of newsworthy information. Simply put, it’s telling stories found in data.
 
-Data-driven storytelling can be hard-hitting investigations or fun xyz. There's no one right way of data reporting, and it's always changing as digital tools become more advanced and accessible. Data journalism can take a variety of forms, including:
+Data-driven storytelling can be hard-hitting and investigative or fun and entertaining. There's no one right way of data reporting, and it's always changing as digital tools become more advanced and accessible. Data journalism has many forms, including:
 
 -   Designing informative and interactive visualizations to embed within news stories
 -   Using code to quickly sort through large data sets and pull out the most important information
@@ -16,18 +16,28 @@ Data-driven storytelling can be hard-hitting investigations or fun xyz. There's 
 
 ### Examples of data reporting
 
-Many news publications have specific data departments that focus on investigation, analytics and visualization, including (but not limited to):
+Many news publications have specific data departments that focus on investigations, analytics and visualizations, including (but not limited to):
 
 -   [ProPublica](https://www.propublica.org/newsapps/)
 
 -   [The New York Times](https://www.nytimes.com/spotlight/graphics)
 
--   The Washington Post
+-   [The Washington Post](https://www.washingtonpost.com/business/2022/06/29/dept-of-data/)
 
 -   [The Texas Tribune](https://www.texastribune.org/series/news-apps-graphics-databases/)
 
 -   [The Houston Chronicle](https://www.houstonchronicle.com/news/interactives/2024/)
 
--   The Minnesota Star Tribune
+-   [The Financial Times](https://www.ft.com/visual-and-data-journalism)
+
+-   [NBC News](https://www.nbcnews.com/datagraphics)
 
 ### Why is it useful?
+
+**Data-driven stories help people better grasp the impact of the news they're consuming**. Imagine you're a journalist trying to explain a new policy measure, public health trend, crime spike, or education funding initiatve (all very common issues in the news) — each of these topics can be connected to some source of data ... and that's just a short list of examples. By running simple data analyses, you can beef up your reporting with more context, evidence, and visuals. Plus, it makes you a more credible journalist and helps you builds trust with your audience.
+
+If your beat requires you to frequently work with public records, data skills can help! Government agencies sometimes send data in large, messy spreadsheets that seem impossible to sort through. If you requested information that spans years, for example, you might be given thousands of rows of information. Simple computing skills like the ones you'll learn today can help you quickly sort through it and answer your reporting questions.
+
+### Looking ahead
+
+Nervous about working in R? The next section will break down some of the setup and help you familiarize yourself with the interface. It can be confusing and overwhelming at first, but once you get used to the style, it's an extremely helpful and powerful resource for reporters.

@@ -2,162 +2,193 @@
 title: "Cleaning The Data"
 ---
 
-Some sort of introductory text to what cleaning data even means.
+It's very rare that a dataset comes in the exact format that you want it. There might be unnecessary/distracting columns (as you'll soon see with the Texas Lege data), empty cells, confusing column names, etc. This is why it's always good practice to "clean" the data and get it in proper shape before you start analyzing it. How do you clean it? With code! You can use simple lines of code to rename columns, remove or select columns, merge data from separate tables together, and more.
 
-## 1. Setup
+Before we get into that, let's open the README file to learn about the variables included in each dataset.
 
-First, we need to load the packages that are going to help facilitate the data analysis. You don't need to worry about what each package does, but this is an important setup step that allows us to use specific functions later on. I always include **tidyverse and janitor** at the top of every R file.
+## Read about each CSV
+
+Click on the README.md file on the right side to open the document. It should appear in the top left window. If you want to collapse the console/terminal for a better view, click on the small box in the top right corner of the console window.
+
+Now you can scroll through the README and learn more about each dataset, including the column names and a description of what the data in that column is. The README comes directly from the developers at LegiScan; this is a nice explanatory document that many databases will provide with raw data, but it isn't *always* included.
+
+![](toolkit-pics/readme.png)
+
+As I said in the last section, we're only going to be working with the **bills, people, and sponsors** datasets, so definitely take a look at those. If you want to close the document, click on the small "x" next to the file name (right above the toolbar). But you can also keep it open as we work in our cleaning file.
+
+## Setup
+
+Before we start coding, we need to install and load the packages that are going to help facilitate the data analysis. You don't need to worry about what each package does, but this is an important setup step that allows us to use specific functions later on. I always include **tidyverse and janitor** at the top of every R file.
 
 If you want to learn more about what each of those packages does, you can read about them [here](https://www.tidyverse.org/packages/) and [here](https://www.rdocumentation.org/packages/janitor/versions/2.2.1). But again, not super necessary at the moment.
 
-#### [Installing the packages]{.underline} 
+#### [Installing the packages]{.underline}
 
-#### [Loading them in the R file]{.underline} 
+Expand your console at the bottom of the page, type the following command, and hit enter:
+
+```         
+install.packages("tidyverse")
+```
+
+It's going to immediately start spewing out a bunch of scary red text – don't worry, that actually means it's working. It's installing all of the tidyverse packages (and there's quite a few) to the project so you can run them later on. It may take a minute or two to finish. You'll know it's done if you see the message "The downloaded source packages are in" and this symbol reappears: \>
+
+Next, do the same thing for janitor.
+
+```         
+install.packages("janitor")
+```
+
+This one shouldn't take as long.
+
+#### [Load them into the cleaning file]{.underline}
+
+Great! Click your cleaning.qmd file to open it up. At the top, write a little description to remind your future self what this file was for, something like "In this file I cleaned the bills, people, and sponsors data from LegiScan and merged the three together."
+
+Next, insert a code chunk (see tip below), and add a "Setup" label within the R bracket. Adding a title within the bracket allows you to name the code chunk, which helps you keep track of what's going on in each block of code. Another good organizational practice to get in the habit of.
 
 ::: {.callout-tip title="Tip"}
-Add a "code chunk" to your file by hitting **Command+Option+i** on the keyboard. You'll run all of your code within these chunks, so get used to this keyboard shortcut!
+Add a "code chunk" to your file by hitting **Command+Option+i** on the keyboard. You'll run all of your code inside these little blocks, so get used to this shortcut!
 :::
 
-Copy and paste the code below and "run" it by hitting the green play button in the top right of your code chunk.
+Copy and paste the code below and "run" it by hitting the green arrow in the top right of your code chunk. You'll see some sort of message pop up, but as long as it doesn't say "Error" you're fine to move on.
 
-```{r}
-#| label: setup
-# setup 
+```{r steup}
 library(tidyverse)
 library(janitor)
-library(lubridate)
 ```
 
 ::: {.callout-tip title="Tip"}
-You'll see some sort of message pop up after you run the code; as long as there's no red "error" warning, you're fine to move on.
+To run code without clicking on the green arrow, hit **Command + Enter** on the keyboard. Another good one to get used to.
 :::
 
-## 2. Importing the data from LegiScan
+And that's all you need to worry about for setup!
 
-Now you need to take the data that we downloaded to your computer and import it into this R file. It sounds complicated, but all it takes is a simple line of code.
+::: {.callout-important Title="Important"}
+posit.cloud does not auto save!! So make sure to hit **Command + S** frequently as you work on this.
+:::
 
-#### 2.1 Create your data folders
+## Load the raw data  
 
-If you open the files we downloaded from LegiScan in the previous step, you'll see it actually includes seven different data tables. For the purposes of this project, we're only going to be working with three of those: "bills," "sponsors," and "people."
+Next, you need to tell R that you want it to read the CSV files from your data-raw folder so they appear below. The function to do this is aptly named read_csv().
 
-Create a new code chunk using the keyboard shortcut from above. Copy and run the code below to import those three tables into this file.
+Create a new code chunk and label it "import bills" inside the R bracket. Run the code below to import the bills data into this file. No data should pop up yet, but by running this code, you've created an object called "bills" and have told R that you want to read the csv and save that data inside your new object.
 
-```{r}
-#| label: import bills
- bills <- read_csv("data-raw/tx-bills-all/2025-2026_89th_Legislature/csv/bills.csv")
- 
- bills
+::: {.callout-note Title="Note"}
+By putting "data-raw/bills.csv" inside the function, you're basically telling R: inside the data-raw folder, read the file bills.csv
+:::
+
+```{r import bills}
+bills <- read_csv("data-raw/bills.csv")
 ```
 
-```{r}
-#| label: import sponsors
-sponsors <- read_csv("data-raw/tx-bills-all/2025-2026_89th_Legislature/csv/sponsors.csv")
+**Now, either in the same code chunk or a new one, type bills and run it. Now you should see a table with 14 columns and thousands of rows of data! Feel free to click through it.**
 
-sponsors
-```
-
-```{r}
-#| label: import people
-lawmakers <- read_csv("data-raw/tx-bills-all/2025-2026_89th_Legislature/csv/people.csv")
-
-lawmakers
-```
-
-## 3. "Cleaning" those tables
-
-Oftentimes, data tables aren't in the best shape when you download them. There might be rows or cells that are missing entries, or there may be columns that aren't necessary for the analysis you want to do. This is where cleaning comes in: you can use code to adjust the table/remove data you don't need so the final table is much easier to work with.
-
-### 3.1 Bills
-
-Let's clean up each of the data tables one at a time. We'll start with our "bills" data.
-
-##### A) View the raw data
-
-Before we start cleaning up the tables, let's take another look at what they look like untouched. Run this code to view the table you just imported.
-
-```{r}
-#| label: view bill data
+```{r view bills}
 bills 
 ```
 
-add description of what we're looking at here
+**Repeat these two steps for the "sponsors" data and "people" data. Remember to name your code chunks!**
 
-##### B) Remove unnecessary columns and rename columns
+```{r import sponsors}
+sponsors <- read_csv("data-raw/sponsors.csv")
+```
 
-```{r}
-#| label: clean bill data 
+```{r view sponsors}
+sponsors 
+```
+
+```{r import people}
+lawmakers <- read_csv("data-raw/people.csv")
+```
+
+```{r view people}
+lawmakers
+```
+
+## Clean the tables
+
+You probably noticed while clicking through that these tables aren't as clean as they could be. Some of the column names don't make sense, there are a lot of "NA" cells, and some of the information is just unnecessary for what we want to look at in this project. Let's go through each table one at a time and clean them up.
+
+### 1. Bills
+
+If you go back and look at the bills table, you can see it includes a lot of different columns, some of which are just links. We're going to use the [select()](https://www.rdocumentation.org/packages/dplyr/versions/0.7.3/topics/select) function to remove those columns. We can also take out the session_id column because we know all of this data is from the 89th legislative session, so that value is going to be the same for every entry.
+
+Create a new code block, name it, and then copy and run the code below. By putting a minus sign in front of the column name, you're telling R: don't include this column in the new table.
+
+```{r clean bills}
 bills_clean <- bills |> 
    select(-session_id, -url, -state_link) 
-
-bills_clean 
 ```
 
-```{r}
-# add this to analysis file
-bills_clean |> 
-  group_by(status, status_desc) |> 
-  summarise(status_type = n()) |> 
-  arrange(desc(status_type))
+```{r view clean bills}
+bills_clean
 ```
 
-Describe what we're looking at now.
+::: {.callout-note Title="Note"}
+Notice how I saved this in a new object called "bills_clean." This means the untouched data still exists in the object "bills" if you ever wanted to run that and view it again. It's good practice to create new objects as you change the data and rename it to something that makes sense.
+:::
 
-### 3.2 Lawmakers
+Now you can click through the table to see that the url, state link, and session id data is gone.
 
-##### A) View the raw data
+### 2. Lawmakers
 
-```{r}
-#| label: view lawmaker data 
-lawmakers 
-```
+Looking at the people data, which we've saved as "lawmakers," you can see there are a lot of specific ids for other open data portals, like Follow the Money, Open Secrets, Ballotpedia, and KnowWho. While these are cool to have, we don't need them for the analysis we're running today. If you were writing a story about legislative campaign funds in Texas, for example, you might chose to keep the Follow the Money column.
 
-Description of what we've got here.
+To keep things simple (and to make our table a little smaller) let's remove those columns. We're still going to use the select() function by in the opposite way, this time telling R which columns you *do* want to include.
 
-##### B) Remove unnecessary columns and rename columns
-
-```{r}
-#| label: clean lawmaker data 
+```{r clean lawmakers}
 lawmakers_clean <- lawmakers |> 
   select(people_id, name, middle_name, suffix, party, role, district) 
+```
 
+```{r}
 lawmakers_clean
 ```
 
-Description of what we're working with now.
+You could do this the same way we did for bills, which was use select(-) and tell R the names of the columns you want to remove. It doesn't really matter, I just wanted to demonstrate both options.
 
-### 3.3 Sponsors
+### 3. Sponsors
 
-##### A) View the raw data
+Sponsors is a much smaller data table, with only three columns. As noted in the README, "position" refers to where a lawmaker appears on the sponsor list for a specific bill. For example, if a lawmaker is the primary sponsor for a bill, their position number would read "1" ... if they were the second person to sponsor that bill, it would read "2" ... etc.
 
-```{r}
-#| label: view sponsor data 
-sponsors
-```
+All three of these columns will be useful to us, so we're not going to remove anything.
 
-##### B) Remove unnecessary columns and rename columns
+However, this is a good chance to try the [rename()](https://dplyr.tidyverse.org/reference/rename.html) function, which allows you the change the name of a column. Personally, I want to remind myself that the position number is associated with sponsor order, so I want to rename the column to "spons_position"
 
-```{r}
-#| label: clean sponsor data 
-
+```{r clean sponsors}
 sponsors_clean <- sponsors |> 
   rename(spons_position = position)
+```
 
+```{r}
 sponsors_clean
 ```
 
-Restate all the changes made.
+Now you can see the new column name when you run the table.
 
-## 4. Merge the tables together
+::: {.callout-tip Title="Tip"}
+If you want to choose a name that makes more sense to you, use this convention in the code: rename(\[new column name\] = \[original column name\])
+:::
 
-Now that we've selected the columns we want to work with in each of the three data tables, we need to merge everything together into one big table that we'll use for our analysis. You'll notice there are a couple of repeat columns in the tables, such as people_id and bill_id. We'll want to make sure those only appear once in our big table. Let's do this in two steps: first, copy the code below to merge the lawmaker and sponsor tables together.
+## Merge the tables together
 
-```{r}
+Now that we've cleaned up each table, we're going to combine everything together into one big table to use for our analysis. We'll do this using the [merge()](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/merge) function.
+
+Since we're combining three different tables, we'll do this in two steps. First, copy and run the code below (in a new code chunk) to merge the lawmaker and sponsor tables together. I've created a new object called "law-spons"
+
+```{r merge law-spons}
 law_spons <- merge(lawmakers_clean, sponsors_clean) 
+```
 
+```{r view law-spons}
 law_spons
 ```
 
-Now lets add the description column and date_filed column from the bills table.
+Great! That's most of the data we need, but we're still missing some information from the bills data. Run the code below in a new chunk to add it.
+
+::: {.callout-note Title="Note"}
+I've also renamed the middle_name column to say mid_init because that's more accurate, and I'm picky.
+:::
 
 ```{r}
 final_table <- law_spons |> 
@@ -165,7 +196,11 @@ final_table <- law_spons |>
   rename(mid_init = middle_name) 
 ```
 
-Great! You should have one big data table with the following information:
+```{r}
+final_table
+```
+
+Amazing! You should have one big data table with the following information:
 
 -   people_id = the unique number associated with each lawmaker
 
@@ -205,13 +240,15 @@ Great! You should have one big data table with the following information:
 
 -   last_action_date = calendar date of that update
 
-This is a lot of information to work with! We may not end up using every column, but it's still important to have a full picture of the data available. The table has over 14,000 rows of data, each corresponding with a bill/joint resolution. Now you can see the appeal of sorting through everything in R, rather than manually or in a spreadsheet.
+Phew! This is a lot of information to work with. We may not end up using every column, but it's still important to have a full picture of the data available. The table has over 14,000 rows of data, each corresponding with a bill/joint resolution. Now you can see the appeal of sorting through everything in R, rather than manually or in a spreadsheet.
 
-Add callout note about companion bills
+::: {.callout-note Title="Note"}
+There aren't acutally 14,000 unique bills in session because some of those are "companion bills" which are the same exact bill, but one is introduced in the House and the other is introduced in the Senate.
+:::
 
 We'll be able to quickly sort through all of this information and identify key details about the agendas of Texas lawmakers in the current legislative session. Let's save this table before we move forward with our analysis.
 
-## 5. Saving the clean table
+## Save the clean table
 
 Add instructions for creating a data-processed file.
 

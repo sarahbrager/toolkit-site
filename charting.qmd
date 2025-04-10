@@ -1,5 +1,5 @@
 ---
-title: "Charting The Data"
+title: "Making Data Visualizations"
 format: html
 ---
 
@@ -45,12 +45,14 @@ Click on a district to see the senator's name and the number of bills/joint reso
 
 Go to datawrapper.de and click "Start creating" to make your free account. Once you've done that, you're ready to start following along with the video tutorials and get designing!
 
-### Step-by-step tutorials 
+### Step-by-step tutorials
 
-#### **The bar chart** 
+#### **The bar chart**
 
 *video tutorial for the first chart*
 
-#### **The map** 
+#### **The map**
 
 *video tutorial for the second chart*
+
+### Recap
