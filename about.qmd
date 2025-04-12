@@ -20,25 +20,21 @@ If you decide after this tutorial that you want to learn more R programming skil
 
 #### **1. Go to posit.cloud and create an account**
 
-This is an online version of R, meaning you'll be able to work with the same interface as the R desktop application but in your web browser. If you already R Studio installed on your computer or would prefer to use the desktop version, that will also work for this toolkit. The instructions will work either way. If you plan on pursuing future data projects beyond this tutorial, I do recommend installing R Studio because you will eventually hit a paywall in posit.cloud.
+This is an online version of R, meaning you'll be able to work with the same interface as the R desktop application but in your web browser. If you already have RStudio installed on your computer or would prefer to use the desktop version, that will also work.
 
-##### [**Installing R Studio (optional)**]{.underline}
+#### [Installing RStudio (optional)]{.underline} 
 
-tktk instructions for that
+If you want to install RStudio on your computer, instructions for that can be found on the [Additional Resources](https://sarahbrager.github.io/toolkit-site/resources.html) tab on the left sidebar. The steps I provide throughout this toolkit are more specific to posit.cloud; that being said, if you already know how to set up projects within RStudio, feel free to run your analysis in there.
 
-If you want to keep things simple, though, posit.cloud will do just fine! If you decide you want to install R Studio in the future, you can always come back to these instructions.
+::: callout-tip
+If this is your first time using R, or you're not super comfortable with it, I highly recommend you do this activity in posit.cloud. It will be easier to follow along with the tutorial.
+:::
 
 #### **2. Create a new project within posit.cloud**
 
 Once you're logged in to your account, you should see a dashboard that lists all of your content (this is empty at the moment, of course). In the top right corner, click on the drop down button the create a new project and select "New RStudio Project." All of the work you'll do for this toolkit will be within this project, so if you leave and come back to these instructions make sure to re-enter the same project through your dashboard.
 
 ![](toolkit-pics/creating-project.png){fig-align="center"}
-
-::: {.callout-note appearance="simple"}
-## Note
-
-If you're working in the desktop version of RStudio, create a new project by selecting File —\> New Project —\>
-:::
 
 #### **3. Name your project/familiarize yourself with the interface**
 

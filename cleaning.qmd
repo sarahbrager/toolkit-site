@@ -14,7 +14,7 @@ Now you can scroll through the README and learn more about each dataset, includi
 
 ![](toolkit-pics/readme.png)
 
-As I said in the last section, we're only going to be working with the **bills, people, and sponsors** datasets, so definitely take a look at those. If you want to close the document, click on the small "x" next to the file name (right above the toolbar). But you can also keep it open as we work in our cleaning file.
+As I said in the last section, we're only going to be working with the "**bills," "people," and "sponsors"** datasets, so definitely take a look at those. If you want to close the document, click on the small "x" next to the file name (right above the toolbar). But you can also keep it open as we work in our cleaning file.
 
 ## Setup
 
@@ -24,13 +24,13 @@ If you want to learn more about what each of those packages does, you can read a
 
 #### [Installing the packages]{.underline}
 
-Expand your console at the bottom of the page, type the following command, and hit enter:
+Expand your console at the bottom of the page, type the following command **(in the console, not the terminal)**, and hit enter. Make sure the name of the package is in quotes, or you'll get an error!
 
 ```         
 install.packages("tidyverse")
 ```
 
-It's going to immediately start spewing out a bunch of scary red text – don't worry, that actually means it's working. It's installing all of the tidyverse packages (and there's quite a few) to the project so you can run them later on. It may take a minute or two to finish. You'll know it's done if you see the message "The downloaded source packages are in" and this symbol reappears: \>
+It's going to immediately start spewing out a bunch of scary red text – don't worry, that actually means it's working. It's installing all of the tidyverse packages (and there are quite a few) to the project so you can run them later on. It may take a minute or two to finish. You'll know it's done if you see the message "The downloaded source packages are in" and this symbol reappears: \>
 
 Next, do the same thing for janitor.
 
@@ -44,15 +44,16 @@ This one shouldn't take as long.
 
 Great! **Click your cleaning.qmd file to open it up.** At the top, write a little description to remind your future self what this file was for, something like "In this file I cleaned the bills, people, and sponsors data from LegiScan and merged the three together."
 
-Next, insert a code chunk (see tip below), and add a "Setup" label within the R bracket. Adding a title within the bracket allows you to name the code chunk, which helps you keep track of what's going on in each block of code. Another good organizational practice to get in the habit of.
+Next, insert a code chunk (see tip below). Throughout this lesson, I recommend writing a sentence above every code chunk that explains what the code does; it's a good way of tracking your work for your future self. For example, above the chunk you just added write "I'm loading the tidyverse and janitor packages to this file."
 
 ::: {.callout-tip title="Tip"}
-Add a "code chunk" to your file by hitting **Command+Option+i** on the keyboard. You'll run all of your code inside these little blocks, so get used to this shortcut!
+Add a "code chunk" to your file by hitting **Command+Option+i** on the keyboard. For PC users, it's **ctrl + alt + i**. You'll run all of your code inside these little blocks, so get used to this shortcut!
 :::
 
-Copy and paste the code below and "run" it by hitting the green arrow in the top right of your code chunk. You'll see some sort of message pop up, but as long as it doesn't say "Error" you're fine to move on.
+Copy and paste (or type) the code below and "run" it by hitting the green arrow in the top right of your code chunk. As you can see below, a message pops up when you run it. You don't need to pay much attention to that; as long as it doesn't say "Error" you're fine to move on.
 
 ```{r steup}
+#| message: false
 library(tidyverse)
 library(janitor)
 ```
@@ -64,32 +65,42 @@ To run code without clicking on the green arrow, hit **Command + Enter** on the 
 And that's all you need to worry about for setup!
 
 ::: {.callout-important Title="Important"}
-posit.cloud does not auto save!! So make sure to hit **Command + S** frequently as you work on this.
+posit.cloud does not auto save!! So make sure to hit **Command + S/ctrl + S** frequently to save your work as you go.
 :::
 
 ## Load the raw data
 
-Next, you need to tell R that you want it to read the CSV files from your data-raw folder so they appear below. The function to do this is aptly named read_csv().
+Next, you need to tell R that you want it to read the csv files from your data-raw folder so they appear below. The function to do this is aptly named read_csv().
 
-Create a new code chunk and label it "import bills" inside the R bracket. Run the code below to import the bills data into this file. No data should pop up yet, but by running this code, you've created an object called "bills" and have told R that you want to read the csv and save that data inside your new object.
+Create a new code chunk and add a sentence above it explaining that you're importing the three csv files.
 
-::: {.callout-note Title="Note"}
-By putting "data-raw/bills.csv" inside the function, you're basically telling R: inside the data-raw folder, read the file bills.csv
-:::
+Run the code below to import the "bills" data into this file. No data should appear yet, but you'll see a message from R pop up. By running this code, you've created an **object** called "bills" and have told R that you want to read the csv and save that data inside the new object.
 
 ```{r import bills}
+#| message: false
 bills <- read_csv("data-raw/bills.csv")
 ```
 
-**Now, either in the same code chunk or a new one, type bills and run it. Now you should see a table with 14 columns and thousands of rows of data! Feel free to click through it.**
+::: callout-note
+By putting "data-raw/bills.csv" inside the function, you're basically telling R: inside the data-raw folder, read the file bills.csv
+:::
+
+In the same code chunk, hit Enter twice so you're on a new line. Type bills and run the code again. You should see a table with 14 columns and thousands of rows of data! Click through it.
 
 ```{r view bills}
 bills 
 ```
 
-**Repeat these two steps for the "sponsors" data and "people" data. Remember to name your code chunks!**
+Repeat these two steps for the "sponsors" data and "people" data.
+
+-   Use read_csv to import the data and save it in an object. Run that code.
+
+-   On a new line, type the name of the object and run it so the table appears.
+
+Remember to leave descriptions of your work and save as you go!
 
 ```{r import sponsors}
+#| message: false
 sponsors <- read_csv("data-raw/sponsors.csv")
 ```
 
@@ -98,6 +109,7 @@ sponsors
 ```
 
 ```{r import people}
+#| message: false
 lawmakers <- read_csv("data-raw/people.csv")
 ```
 
@@ -130,7 +142,7 @@ Notice how I saved this in a new object called "bills_clean." This means the unt
 
 Now you can click through the table to see that the url, state link, and session id data is gone.
 
-### 2. Lawmakers
+### 2. Lawmakers (people) 
 
 Looking at the people data, which we've saved as "lawmakers," you can see there are a lot of specific ids for other open data portals, like Follow the Money, Open Secrets, Ballotpedia, and KnowWho. While these are cool to have, we don't need them for the analysis we're running today. If you were writing a story about legislative campaign funds in Texas, for example, you might chose to keep the Follow the Money column.
 
@@ -200,7 +212,7 @@ final_table <- law_spons |>
 final_table
 ```
 
-Amazing! You should have one big data table with the following information:
+Amazing! You should have one big data table with 19 different columns:
 
 -   people_id = the unique number associated with each lawmaker
 
@@ -258,7 +270,7 @@ final_table |>
 Nothing appears when you run it, but if you click into your data-processed folder, you should see the Rds file.
 
 ::: {.callout-important Title="Reminder"}
-Have you saved your changes to this file? **Hit Command + S!**
+Have you saved your changes to this file? **Hit Command/ctrl + S!**
 :::
 
 ## Recap

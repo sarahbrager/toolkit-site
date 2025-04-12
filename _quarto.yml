@@ -50,7 +50,7 @@ website:
         href: analysis.qmd
       - text: "Visualizing the Data"
         href: charting.qmd
-      - text: "Reporting With the Data"
+      - text: "Reporting with the Data"
         href: reporting.qmd
       - text: "Additional Resources"
         href: resources.qmd

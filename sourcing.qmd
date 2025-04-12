@@ -21,6 +21,10 @@ Now let's get into the Texas Lege data!
 
 LegiScan requires you to create a username and password to download datasets. This is completely free. Create an account, and then click on the "Datasets" tab at the top of the page.
 
+::: callout-note
+LegiScan will ask you to verify your account before you can download the data. Make sure you do that.
+:::
+
 ![](toolkit-pics/login.png)
 
 #### **3. Filter for Texas**
@@ -57,7 +61,11 @@ Go back to your project in posit.cloud and click on the Upload button in the bot
 
 ![](toolkit-pics/upload-data.png)
 
-A little window will pop up asking you to choose the files from your computer. In this tutorial, **we're just going to use three of the CSVs: bills, people, and sponsors**. Add those to your project one at a time:
+::: callout-tip
+If you're working in the R Studio application, there isn't a little upload button within the R interface. Instead, you can manually move the CSVs to your data-raw folder in Finder (File Explorer if you use a PC).
+:::
+
+A little window will pop up asking you to choose the files from your computer. In this tutorial, **we're just going to use three of the CSVs: "bills," "people," and "sponsors**." Add those to your project one at a time:
 
 -   Click on Choose File and select one of the CSVs.
 
@@ -67,13 +75,9 @@ A little window will pop up asking you to choose the files from your computer. I
 
 -   Add the README file to your project as well. We'll take a look at that in the next section. No need to add this one to the data-raw folder.
 
-::: {.callout-tip Title="Note"}
-If you're working in the R Studio application, there isn't a little upload button within the R interface. Instead, you can manually move the CSVs to your data-raw folder in Finder (File Explorer if you use a PC).
-:::
-
 ![](toolkit-pics/directory.png)
 
-Now you should see all three datasets inside your data-raw folder when you click on it. To exit out of the folder, click on the two little dots next to the green arrow.
+Now you should see all three datasets inside your data-raw folder when you click on it. Make sure they are actually **inside** the folder; this will prevent errors in the next section of the lesson. To exit out of the folder, click on the two little dots next to the green arrow.
 
 ### Recap
 

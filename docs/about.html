@@ -242,12 +242,24 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="first-steps">First steps</h3>
 <section id="go-to-posit.cloud-and-create-an-account" class="level4">
 <h4 class="anchored" data-anchor-id="go-to-posit.cloud-and-create-an-account"><strong>1. Go to posit.cloud and create an account</strong></h4>
-<p>This is an online version of R, meaning you’ll be able to work with the same interface as the R desktop application but in your web browser. If you already R Studio installed on your computer or would prefer to use the desktop version, that will also work for this toolkit. The instructions will work either way. If you plan on pursuing future data projects beyond this tutorial, I do recommend installing R Studio because you will eventually hit a paywall in posit.cloud.</p>
-<section id="installing-r-studio-optional" class="level5">
-<h5 class="anchored" data-anchor-id="installing-r-studio-optional"><u><strong>Installing R Studio (optional)</strong></u></h5>
-<p>tktk instructions for that</p>
-<p>If you want to keep things simple, though, posit.cloud will do just fine! If you decide you want to install R Studio in the future, you can always come back to these instructions.</p>
+<p>This is an online version of R, meaning you’ll be able to work with the same interface as the R desktop application but in your web browser. If you already have RStudio installed on your computer or would prefer to use the desktop version, that will also work.</p>
 </section>
+<section id="installing-rstudio-optional" class="level4">
+<h4 class="anchored" data-anchor-id="installing-rstudio-optional"><u>Installing RStudio (optional)</u></h4>
+<p>If you want to install RStudio on your computer, instructions for that can be found on the <a href="https://sarahbrager.github.io/toolkit-site/resources.html">Additional Resources</a> tab on the left sidebar. The steps I provide throughout this toolkit are more specific to posit.cloud; that being said, if you already know how to set up projects within RStudio, feel free to run your analysis in there.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If this is your first time using R, or you’re not super comfortable with it, I highly recommend you do this activity in posit.cloud. It will be easier to follow along with the tutorial.</p>
+</div>
+</div>
 </section>
 <section id="create-a-new-project-within-posit.cloud" class="level4">
 <h4 class="anchored" data-anchor-id="create-a-new-project-within-posit.cloud"><strong>2. Create a new project within posit.cloud</strong></h4>
@@ -256,19 +268,6 @@ ul.task-list li input[type="checkbox"] {
 <figure class="figure">
 <p><img src="toolkit-pics/creating-project.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
-</div>
-<div class="callout callout-style-simple callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you’re working in the desktop version of RStudio, create a new project by selecting File —&gt; New Project —&gt;</p>
-</div>
 </div>
 </section>
 <section id="name-your-projectfamiliarize-yourself-with-the-interface" class="level4">
@@ -408,6 +407,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

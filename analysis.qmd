@@ -16,12 +16,12 @@ Before I start any analysis, I like to brain dump a few questions I hope to answ
 
 4.  How can we identify bills based on keywords, like "immigration" to name one example?
 
-5.  How many bills have been assigned to each committee? How many committees make up the Senate vs. the House?
+5.  How many bills have been assigned to each committee? How many committees make up the Texas Senate vs. the House?
 
 This is not an exhaustive list of the questions you could answer with this data, but it's a good introduction to sorting through large data sets. Let's take a look at these questions one at a time.
 
 ::: {.callout-note Title="Note"}
-My results might look different than yours throughout this section because I downloaded the data on a different date, meaning yours is more up-to-date than mine. But all of the instructions will still work.
+**My results might look different than yours throughout this section because I downloaded the data on a different date, meaning yours is more up-to-date than mine. If you ever re-run this analysis at a later date, expect your results to change.**
 :::
 
 ### Setup again
@@ -31,12 +31,13 @@ Open your analysis.qmd file.
 As with your cleaning file, you need to load the libraries that allow you to run certain functions. We'll be using the same ones. Type out the code below and run it in a new block at the top of the file.
 
 ```{r steup}
+#| message: false 
 library(tidyverse)
 library(janitor)
 ```
 
 ::: {.callout-important Title="Reminder"}
-Don't forget to label your code blocks and save your work regularly!
+Don't forget to label your work and save regularly!
 :::
 
 ### Import the clean data
@@ -59,7 +60,7 @@ If you click through, it should be the exact table you saved at the end of the c
 
 In the next few steps, we'll use different functions to rearrange the table and look at the data in new ways!
 
-### 1. Sponsors: most vs. least 
+### 1. Sponsors: most vs. least
 
 Now let's get into the first question: Who sponsored the most bills this session? To figure this out, youll use three functions — group_by(), summarize() and arrange().
 
@@ -76,6 +77,7 @@ It's very common to use these three functions together to run simple computation
 Run the following code to see who sponsored the most bills this session.
 
 ```{r most filed}
+#| message: false 
 final_table |> 
   group_by(name, party, role) |> 
   summarise(number_filed = n()) |> 
@@ -96,8 +98,8 @@ My exact numbers might look different from yours because I downloaded this data 
 
 We're looking at a lot of rows here, 180 to be exact, so what if we wanted to highlight the top 10 lawmakers who have sponsored the most this session? We can do this with the head() function. Run the code again, this time with one extra line at the end. Save it into an object called most_spons.
 
-```{r}
-#| label: top ten
+```{r top ten}
+#| message: false 
 most_spons <- final_table |> 
   group_by(name, party, role) |> 
   summarise(number_filed = n()) |> 
@@ -113,11 +115,12 @@ most_spons
 
 Because we put the number 10 inside the head function, the table now only shows the first 10 rows – or top 10 lawmakers based on number of bills filed. Feel free to mess around with the number inside the head function and see how your result changes.
 
-#### 1.3 Who sponsored the least? 
+#### 1.3 Who sponsored the least?
 
 We can easily see who filed the least bills with one small change to the code above. The arrange() function defaults to ascending order when we don't have that desc() specification in the code. So all we need to do is take that out and run it! Do this in a new code block, not the one you used earlier.
 
 ```{r least filed}
+#| message: false 
 final_table |> 
   group_by(name, party, role) |> 
   summarise(number_filed = n()) |> 
@@ -127,6 +130,7 @@ final_table |>
 Rep. Ramon Romero Jr. sponsored the least legislation this session, with only 10 bills. Like before, let's just focus on the top 10 rows, which in this case would be the 10 lawmakers who filed the least bills this session. I think you know what to add here!
 
 ```{r}
+#| message: false 
 least_spons <- final_table |> 
   group_by(name, party, role) |> 
   summarise(number_filed = n()) |> 
@@ -152,9 +156,10 @@ final_table |>
   count(party)
 ```
 
-Repeat this in a new chunk, but filter for Republicans.
+Repeat this in a new chunk, but filter for Republicans. Try writing it on your own first before viewing my code.
 
 ```{r republicans}
+#| code-fold: true
 final_table |> 
   filter(party == "R") |> 
   count(party)
@@ -183,7 +188,7 @@ final_table |>
 
 Now you can see the congressional district associated with each lawmaker. If you want to know what this looks like on a map (because most people don't know congressional districts off the top of their head), here's are maps for the [Texas House](https://www.txdot.gov/content/dam/docs/maps/texas-legislature/texas-house-district-map.pdf) and [Texas Senate](https://www.txdot.gov/content/dam/docs/maps/texas-legislature/texas-senate-district-map.pdf).
 
-#### 2.1 Just senators 
+#### 2.1 Just senators
 
 To just view Texas senators and their districts, you need to filter the role column. The code is the same as above with the new command added after the group_by line.
 
@@ -199,11 +204,12 @@ sen_districts <- final_table |>
 sen_districts
 ```
 
-#### 2.2 Just representatives 
+#### 2.2 Just representatives
 
-You know the drill. Change your filter setting to say "Rep" instead of "Sen" ... but in a new code block!
+You know the drill. Filter for "Rep" instead of "Sen" and try it on your own first.
 
 ```{r representatives}
+#| code-fold: true
 house_districts <- final_table |> 
   group_by(name, district, role, party) |> 
   filter(role == "Rep") |> 
@@ -217,7 +223,7 @@ house_districts
 
 Nice! We're actually going to make our own senate district map later on, so this is an important step.
 
-### 3. Bill status 
+### 3. Bill status
 
 LegiScan tracks the status of bills in four ways:
 
@@ -242,7 +248,7 @@ As you can see, most bills are at the status Introduced, meaning they're still b
 
 You might be thinking, wow a lot of bills made it to the governor. Those are almost exclusively resolutions that memorialize people, commemorate anniversaries or recognize certain days in honor of something. They usually only have to be approved by one chamber, which is why they move through the legislative process so quickly.
 
-### 4. Keyword detection 
+### 4. Keyword detection
 
 Maybe you have a specific bill or keyword in mind that you want to quickly search for. You technically don't need code to do this. You should be able to see the final_table object listed in the environment window (top right). Click on it to open it in the source window. From there, you can use the search bar to look for specific bill numbers, lawmaker names, keywords in the description, etc.
 
@@ -262,7 +268,7 @@ final_table |>
   filter(grepl("immigration|border|visa|refugee", description, ignore.case = TRUE))
 ```
 
-#### 4.1 On your own 
+#### 4.1 On your own
 
 Experiment with this function by filtering for other keywords. To change the column name you're filtering, replace "description" with the name of the column.
 
@@ -287,7 +293,7 @@ bills_per_committee
 
 Looks like about half of the bills haven't been assigned to committee, which makes sense given how many there are in session. In my results, the House State Affairs Committee has the most, but not by much. Other committees that have been assigned a lot of bills include House Public Education and Senate State Affairs. This would be an interesting thing to re-run later in the session, or after it ends, to see how the data changed.
 
-#### 5.1 Number of Senate committees 
+#### 5.1 Number of Senate committees
 
 Filter for every committee name that includes "Senate."
 
@@ -297,19 +303,20 @@ bills_per_committee |>
   count()
 ```
 
-#### 5.2 Number of House committees 
+#### 5.2 Number of House committees
 
 Now repeat that in a new block, but filter for House.
 
 ```{r}
+#| code-fold: true
 bills_per_committee |> 
   filter(grepl("House", committee, ignore.case = TRUE)) |> 
   count()
 ```
 
-This makes sense, given there are 150 representatives and only 31 senators.
+This result makes sense, given there are 150 representatives and only 31 senators.
 
-### Saving data for charts 
+### Saving data for charts
 
 You're going to use some of the data from this section to build our two charts, which means you need to save those tables to your computer. The write_csv() function takes a specific object and saves it as a csv file to your computer.
 
@@ -327,7 +334,7 @@ write_csv(most_spons, "data-processed/sen-districts.csv")
 
 Click inside your data-processed folder to make sure those appear. AND SAVE YOUR ANALYSIS FILE AGAIN.
 
-#### Export CSVs from posit.cloud
+#### [Export CSVs from posit.cloud]{.underline}
 
 1.  Open the data-processed folder.
 2.  Check the boxes for the two csv files you just created.

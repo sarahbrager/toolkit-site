@@ -4,3 +4,15 @@ format: html
 ---
 
 This will have a list of resources related to data analysis/coding if people want to learn more than what's in this toolkit.
+
+-   video for installing R
+
+-   Links to R tutorials
+
+-   Code academy link again
+
+-   Datawrapper academy link again
+
+-   Link to spreadsheet tutorials
+
+-   

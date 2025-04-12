@@ -242,6 +242,19 @@ ul.task-list li input[type="checkbox"] {
 <section id="create-an-account" class="level4">
 <h4 class="anchored" data-anchor-id="create-an-account"><strong>2. Create an account</strong></h4>
 <p>LegiScan requires you to create a username and password to download datasets. This is completely free. Create an account, and then click on the “Datasets” tab at the top of the page.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>LegiScan will ask you to verify your account before you can download the data. Make sure you do that.</p>
+</div>
+</div>
 <p><img src="toolkit-pics/login.png" class="img-fluid"></p>
 </section>
 <section id="filter-for-texas" class="level4">
@@ -291,14 +304,7 @@ Tip
 <h3 class="anchored" data-anchor-id="add-the-files-to-your-r-project">Add the files to your R project</h3>
 <p>Go back to your project in posit.cloud and click on the Upload button in the bottom right window.</p>
 <p><img src="toolkit-pics/upload-data.png" class="img-fluid"></p>
-<p>A little window will pop up asking you to choose the files from your computer. In this tutorial, <strong>we’re just going to use three of the CSVs: bills, people, and sponsors</strong>. Add those to your project one at a time:</p>
-<ul>
-<li><p>Click on Choose File and select one of the CSVs.</p></li>
-<li><p>Where it says target directory, click on browse and select your data-raw folder (to keep things organized). Hit OK.</p></li>
-<li><p>Do the same thing for the second and third CSV files.</p></li>
-<li><p>Add the README file to your project as well. We’ll take a look at that in the next section. No need to add this one to the data-raw folder.</p></li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled" data-title="Note">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -311,8 +317,15 @@ Tip
 <p>If you’re working in the R Studio application, there isn’t a little upload button within the R interface. Instead, you can manually move the CSVs to your data-raw folder in Finder (File Explorer if you use a PC).</p>
 </div>
 </div>
+<p>A little window will pop up asking you to choose the files from your computer. In this tutorial, <strong>we’re just going to use three of the CSVs: “bills,” “people,” and “sponsors</strong>.” Add those to your project one at a time:</p>
+<ul>
+<li><p>Click on Choose File and select one of the CSVs.</p></li>
+<li><p>Where it says target directory, click on browse and select your data-raw folder (to keep things organized). Hit OK.</p></li>
+<li><p>Do the same thing for the second and third CSV files.</p></li>
+<li><p>Add the README file to your project as well. We’ll take a look at that in the next section. No need to add this one to the data-raw folder.</p></li>
+</ul>
 <p><img src="toolkit-pics/directory.png" class="img-fluid"></p>
-<p>Now you should see all three datasets inside your data-raw folder when you click on it. To exit out of the folder, click on the two little dots next to the green arrow.</p>
+<p>Now you should see all three datasets inside your data-raw folder when you click on it. Make sure they are actually <strong>inside</strong> the folder; this will prevent errors in the next section of the lesson. To exit out of the folder, click on the two little dots next to the green arrow.</p>
 </section>
 <section id="recap" class="level3">
 <h3 class="anchored" data-anchor-id="recap">Recap</h3>
@@ -427,6 +440,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

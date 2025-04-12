@@ -1,6 +1,22 @@
 ---
-title: "Using What You Learned For Journalism"
+title: "Using the Data as a Journalist"
 format: html
 ---
 
-This will have story suggestions, ways to include data in the nutgraf, links to resources about writing with numbers, etc.
+intro
+
+### Incorporating the data in your reporting 
+
+If you're a journalist covering Texas politics and policymaking in any way, these statistics could provide great context for readers about the current legislative session. Whether you're doing a broad overview of trends from the session or reporting on a specific bill, you can come back to this analysis and pull information to weave into your article. For example:
+
+#### [Some tips for writing with numbers]{.underline}
+
+-   Don't include more than 2-3 stats in a paragraph.
+
+-   
+
+#### [What if I'm a journalist in a different state?]{.underline} 
+
+You can run this exact analysis using LegiScan data from any other state! Follow the instructions on the Sourcing page, but select your state of choice when downloading the data.
+
+### Story ideas based on the data 
