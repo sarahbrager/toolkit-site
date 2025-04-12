@@ -9,6 +9,7 @@ format:
     toc: true
     df-print: paged
     code-overflow: wrap
+    link-external-newwindow: true
     
 
 

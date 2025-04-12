@@ -1,6 +1,6 @@
 ---
-title: "resources"
+title: "Resources"
 format: html
 ---
 
-Resources if they want to learn more. 
+This will have a list of resources related to data analysis/coding if people want to learn more than what's in this toolkit.

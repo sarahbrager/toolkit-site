@@ -1,6 +1,6 @@
 ---
-title: "reporting"
+title: "Using What You Learned For Journalism"
 format: html
 ---
 
-This will have markdown text with story suggestions and whatnot.
+This will have story suggestions, ways to include data in the nutgraf, links to resources about writing with numbers, etc.

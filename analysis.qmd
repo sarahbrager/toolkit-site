@@ -2,236 +2,348 @@
 title: "Analyzing The Data"
 ---
 
-Before starting a data analysis, it's a good idea to brain dump a series of questions you hope to answer based on the variables you know you're working with. For this toolkit, we're going to answer the following:
+Before I start any analysis, I like to brain dump a few questions I hope to answer based on the data I'm working with. This gives me a sense of direction for which computations to run, and it helps me keep track of my work if I ever return to old analysis projects. In this lesson, we're going to answer the following:
 
--   Which Texas lawmakers filed the most bills? What does that look like broken down by political party?
+1.  Which Texas lawmakers sponsored the most legislation? Who sponsored the least legislation?
 
-    -   We'll also look at who has filed the least
+    -   We'll also break this down by political party and compare Democrats vs. Republicans.
 
--   From which districts do the lawmakers who have filed the most come from?
+2.  Looking at the top 10 sponsors of this session: Which parts of the state do they represent?
 
--   What does the number of bills filed look like in each month? Which month had the most?
+3.  What does the distribution of bill status look like? (Introduced vs. Engrossed vs. Passed)
 
--   How many bills can we flag for some of the biggest policy issues in Texas right now: abortion, immigration, education, energy/environment, and transgender issues?
+    -   How many haven't made any progress at all?
 
-    -   We'll flag bills that use these terms explicitly, as well as bills that use related terms
+4.  How can we identify bills based on keywords, like "immigration" to name one example
 
--   How do the stats above compare to the 88th legislative session?
+5.  How many bills have been assigned to each committee? How many committees make up the Senate vs. the House?
 
 This is not an exhaustive list of the questions you could answer with this data, but it's a good introduction to sorting through large data sets. Let's take a look at these questions one at a time.
 
-### 1. Setup again
+### Setup again
 
-As with your cleaning file, you need to import the libraries that allow you to run certain functions. We'll be loading the same ones. Copy the code below and run it.
+Open your analysis.qmd file.
 
-```{r}
-#| label: setup
+As with your cleaning file, you need to load the libraries that allow you to run certain functions. We'll be using the same ones. Type out the code below and run it in a new block at the top of the file.
+
+```{r steup}
 library(tidyverse)
 library(janitor)
-library(lubridate)
-library(stringr)
 ```
 
-### 2. Importing the clean data
+::: {.callout-important Title="Reminder"}
+Don't forget to label your code blocks and save your work regularly!
+:::
 
-Copy and run the code below to import the table we saved in the previous step. To view the table again, type "final_table" on a new line in the code chunk and run it again. There should be 14,190 rows of data with nine columns: people_id, name, party, role, district, bill_id, bill_number, date_filed, and description. Right now, you can see the data is listed in alphabetical order by lawmaker last name, which is why Rep. Alma Allen comes up for the first 50 rows. In the next few steps, we'll use different functions to rearrange the table and look at the data in new ways!
+### Import the clean data
 
-```{r}
-#| label: import
+Remember that rds file you saved in the previous section? Now we want to tell R to read that file so it appears here. To do so, you'll use a very similar function to read_csv() ... which is called read_rds(). As with read_csv, you'll write a direct path to where the rds file sits in your data-processed folder.
+
+Run read_rds() for the processed data, and save it in an object called "final_table." After you've run that command, "call" the object final_table (meaning run it) so the data appears.
+
+If you need a reminder, the code looks like this:
+
+```{r import rds}
 final_table <- read_rds("data-processed/bills-89.rds")
+```
 
+```{r view rds}
 final_table
 ```
 
-### 3. Lawmakers: most vs. least filed
+If you click through, it should be the exact table you saved at the end of the cleaning process. Right now, you can see the data appears in alphabetical order by lawmaker last name, which is why Rep. Alma Allen comes up for the first 50 rows.
 
-Now let's get into our first question: which lawmaker filed the most bills this session? To figure this out, we're going to use three functions — group_by, summarize and arrange.
+In the next few steps, we'll use different functions to rearrange the table and look at the data in new ways!
 
--   "group_by" allows us to sort the data into specific groups based on variables that we want to focus on; in this case, we want to group by name, party, role, and district.
+### 1. Sponsors: most vs. least 
 
--   "summarize" computes a summary of the data usually by a mean or a sum; we'll just be focusing on the sum aspect because we want to count the number of bills each lawmaker has filed.
+Now let's get into the first question: Who sponsored the most bills this session? To figure this out, youll use three functions — group_by(), summarize() and arrange().
 
--   "arrange" allows us to determine how we want to data to be presented; we can use this function to order the lawmaker names from most filed to least filed
+-   [group_by()](https://dplyr.tidyverse.org/reference/group_by.html) allows us to sort the data into specific groups based on variables that we want to focus on; in this case, we want to group by name, party, role, and district.
 
-It's very common to use these three functions together to run basic computations of data. So let's apply it to our data set! Run the code below to find out who filed the most bills.
+-   [summarize()](https://dplyr.tidyverse.org/reference/summarise.html) computes a summary of the data usually by a mean or a sum; we'll just be focusing on the sum aspect because we want to count the number of bills each lawmaker has filed.
 
-#### 3.1 Doing the most first
+-   [arrange()](https://dplyr.tidyverse.org/reference/arrange.html) allows us to determine how we want to data to be presented; we can use this function to order the lawmaker names from most filed to least filed
 
-```{r}
-#| label: most filed 
+It's very common to use these three functions together to run simple computations, so get used to this order of operations.
+
+#### 1.1 Doing the most first
+
+Run the following code to see who sponsored the most bills this session.
+
+```{r most filed}
 final_table |> 
-  group_by(name, party, role, district) |> 
+  group_by(name, party, role) |> 
   summarise(number_filed = n()) |> 
   arrange(desc(number_filed))
 ```
 
 ::: {.callout-tip title="Tip"}
-If you try to run the code and you get an error, check the syntax. Do all of your indents match mine? Did you accidentally add in a comma or a parenthesis? Code syntax is extremely important, and most code errors are from very small mistakes in the typing.
+If you run the code and you get an error, check the syntax. Do all of your indents match mine? Did you accidentally add in a comma or a parenthesis? Code syntax is extremely important, and most code errors are from very small mistakes in the typing.
 :::
 
-Looks like Sen. Bryan Hughes filed the most this session, with 276 bills. If you click through the table, you'll see the values in the "number_filed" column decrease. That's because we added the "desc()" element to our arrange function, which means we want it arranged in descending order.
+Looks like S**en. Bryan Hughes sponsored the most this session**. If you click through the table, you'll see the values in the "number_filed" column decrease. That's because we added the "desc()" element to our arrange function, which means we want it arranged in descending order.
 
-#### 3.2 Just the top of the list
+::: {.callout-note Title="Note"}
+My exact numbers might look different from yours because I downloaded this data on a different day, so don't worry if your result isn't exactly the same as mine.
+:::
 
-We're looking at a lot of rows here, 180 to be exact, so what if we wanted to easily focus on the top 10 lawmakers who have filed the most this session? We can do this with the head() function. Run the code again, this time with one extra line at the end.
+#### 1.2 Just the top of the list
+
+We're looking at a lot of rows here, 180 to be exact, so what if we wanted to highlight the top 10 lawmakers who have sponsored the most this session? We can do this with the head() function. Run the code again, this time with one extra line at the end. Save it into an object called most_filed.
 
 ```{r}
 #| label: top ten
-most_filed <- final_table |> 
-  group_by(name, party, role, district) |> 
+most_spons <- final_table |> 
+  group_by(name, party, role) |> 
   summarise(number_filed = n()) |> 
   arrange(desc(number_filed)) |> 
   head(10)
+```
 
-most_filed
+Now call most_filed to see the top 10 list.
+
+```{r}
+most_spons
 ```
 
 Because we put the number 10 inside the head function, the table now only shows the first 10 rows – or top 10 lawmakers based on number of bills filed. Feel free to mess around with the number inside the head function and see how your result changes.
 
-#### 3.3 Now the least
+#### 1.3 Who sponsored the least? 
 
-We can easily see who filed the least bills with one small change to the code above. The arrange() function defaults to ascending order, so least filed to most filed, when we don't have that desc() specification in the code. So all we need to do is take that out and run it!
+We can easily see who filed the least bills with one small change to the code above. The arrange() function defaults to ascending order when we don't have that desc() specification in the code. So all we need to do is take that out and run it! Do this in a new code block, not the one you used earlier.
 
-```{r}
-#| label: least filed
+```{r least filed}
 final_table |> 
-  group_by(name, party, role, district) |> 
+  group_by(name, party, role) |> 
   summarise(number_filed = n()) |> 
   arrange(number_filed)
 ```
 
-Rep. Ramon Romero Jr. filed the least this session, with only 10 bills. Like before, let's just focus on the top 10 rows, which in this case would be the 10 lawmakers who filed the least bills this session. Copy and run the code below.
+Rep. Ramon Romero Jr. sponsored the least legislation this session, with only 10 bills. Like before, let's just focus on the top 10 rows, which in this case would be the 10 lawmakers who filed the least bills this session. I think you know what to add here!
 
 ```{r}
-#| label: top ten least 
-final_table |> 
-  group_by(name, party, role, district) |> 
+least_spons <- final_table |> 
+  group_by(name, party, role) |> 
   summarise(number_filed = n()) |> 
   arrange(number_filed) |> 
   head(10)
 ```
 
+```{r}
+least_spons
+```
+
+#### 1.4 Democrats vs. Republicans
+
+To break this down by political party, we're going to use the [filter()](https://dplyr.tidyverse.org/reference/filter.html) function, which tells R to filter for a certain condition in the data. In this case, the condition is whether party equals D or R.
+
+First we're going to tell it to filter for Democratic lawmakers by setting party == to "D" (note the double equal sign, this is the proper syntax). Then, we're telling it to count the number of times party equals D. That tells us the number of bills/resolutions sponsored by a Democratic lawmaker.
+
+Copy and run the code.
+
+```{r democrats}
+final_table |> 
+  filter(party == "D") |> 
+  count(party)
+```
+
+Repeat this in a new chunk, but filter for Republicans.
+
+```{r republicans}
+final_table |> 
+  filter(party == "R") |> 
+  count(party)
+```
+
+You can see 8,969 bills/resolutions were sponsored by Republicans, while only 5,221 were sponsored by Democrats. This makes sense, considering Republicans have the majority in Congress.
+
 Congrats! You just answered the first questions from the brainstorm. And hopefully you're starting to realize how you can organize a data table and look at it in different ways.
 
-### 4. Districts
+### 2. Districts
 
-Now that we know who filed the most bills this session, we want to figure out which districts they represent. Our data set has a Texas house or senate district (HD/SD) associated with each lawmaker, so we can use a similar method as above to quickly see where the most "active" lawmakers come from.
+Now that we know who filed the most bills this session, we want to figure out which districts they represent. Our data set has a Texas house or senate district (HD/SD) associated with each lawmaker, so we can use a similar method as above to see where each one comes from. Key things here:
 
-```{r}
-#| label: districts
+-   We're adding the district column to the group_by list
+
+-   We're using the count() function to tell R to count the number of entries for each lawmaker (aka how many bills they sponsored)
+
+-   We're telling it to arrange the data in descending order
+
+```{r districts}
 final_table |> 
-  group_by(name, district) |> 
-  count(district) |> 
+  group_by(name, district, role, party) |> 
+  count(name) |> 
   arrange(desc(n))
-  
 ```
 
-### 5. Bills per month
+Now you can see the congressional district associated with each lawmaker. If you want to know what this looks like on a map (because most people don't know congressional districts off the top of their head), here's are maps for the [Texas House](https://www.txdot.gov/content/dam/docs/maps/texas-legislature/texas-house-district-map.pdf) and [Texas Senate](https://www.txdot.gov/content/dam/docs/maps/texas-legislature/texas-senate-district-map.pdf).
+
+#### 2.1 Just senators 
+
+To just view Texas senators and their districts, you need to filter the role column. The code is the same as above with the new command added after the group_by line.
+
+```{r senators}
+sen_districts <- final_table |> 
+  group_by(name, district, role, party) |> 
+  filter(role == "Sen") |> 
+  count(name) |> 
+  arrange(desc(n))
+```
+
+```{r}
+sen_districts
+```
+
+#### 2.2 Just representatives 
+
+You know the drill. Change your filter setting to say "Rep" instead of "Sen" ... but in a new code block!
+
+```{r representatives}
+house_districts <- final_table |> 
+  group_by(name, district, role, party) |> 
+  filter(role == "Rep") |> 
+  count(name) |> 
+  arrange(desc(n))
+```
+
+```{r}
+house_districts
+```
+
+Nice! We're actually going to make our own senate district map later on, so this is an important step.
+
+### 3. Bill status 
+
+LegiScan tracks the status of bills in four ways:
+
+-   No progress: a bill that was filed but not actually introduced to the session **(These appear as "NA" in the data)**
+
+-   Introduced: approved for review in session and pending in one of the chambers
+
+-   Engrossed: passed one chamber and sent to the other for review
+
+-   Passed: approved by both chambers, headed to the governor's desk
+
+Let's see how many bills/resolutions are in each category. This is as of the date the data was last updated by LegiScan, so again my result might look different than yours.
 
 ```{r}
 final_table |> 
-  group_by(status_date) |> 
-  summarise()
-  
+  group_by(status_desc) |> 
+  count(status_desc) |> 
+  arrange(desc(n))
 ```
 
-::: {.callout-note icon="false"}
-## Note
+As you can see, most bills are still being reviewed in the first chamber and haven't gone to an official vote. Or maybe there was a vote without enough support and the bill died on the floor. If you're running this analysis much later in the session, or after the fact, you'll probably see a higher number for engrossed and passed.
 
-November and March are both incomplete months in the data set because filing opened on Nov. 12 and closed on March 14. Keep this in mind when analyzing your results in this section.
-:::
+You might be thinking, wow a lot of bills made it to the governor. Those are almost exclusively resolutions that memorialize people, commemorate anniversaries or recognize certain days in honor of something. They usually only have to be approved by one chamber, which is why they move through the legislative process so quickly.
 
-### 6. Policy topics // Status tracking
+### 4. Keyword detection 
 
-Trying to organize status by type of legislation (HB, SB, HR, SR, HJR, SJR, HCR, SCR)
+Maybe you have a specific bill or keyword in mind that you want to quickly search for. You technically don't need code to do this. You should be able to see the final_table object listed in the environment window (top right). Click on it to open it in the source window. From there, you can use the search bar to look for specific bill numbers, lawmaker names, keywords in the description, etc.
 
-```{r}
+If you want to create a new table of bills that include certain keywords, though, you'll do so in a code chunk using a more extensive filtering method called [filter(grepl())](https://stackoverflow.com/questions/25999491/filtering-observations-in-dplyr-in-combination-with-grepl). Without getting too technical, you're going to tell R what word to look for and in which column.
 
-sb_status <- final_table |> 
-  filter(grepl("SB", bill_number, ignore.case = TRUE)) |> 
-  count(status_desc) |> 
-  mutate(chamber = "Sen", bill_type = "Bill") 
+Let's see how many bills have the word "immigration" in the description. Create a code block and run the following:
 
-hb_status <- final_table |> 
-  filter(grepl("HB", bill_number, ignore.case = TRUE)) |> 
-  count(status_desc) |> 
-  mutate(chamber = "House", bill_type = "Bill")
-
-sr_status <- final_table |> 
-  filter(grepl("SR", bill_number, ignore.case = TRUE)) |> 
-  count(status_desc) |> 
-  mutate(chamber = "Sen", bill_type = "Resolution")
-
-hr_status <- final_table |> 
-  filter(grepl("HR", bill_number, ignore.case = TRUE)) |> 
-  count(status_desc) |> 
-  mutate(chamber = "House", bill_type = "Resolution") 
-
-hjr_status <- final_table |> 
-  filter(grepl("HJR", bill_number, ignore.case = TRUE)) |> 
-  count(status_desc) |> 
-  mutate(chamber = "House", bill_type = "Joint Res")
-
-sjr_status <- final_table |> 
-  filter(grepl("SJR", bill_number, ignore.case = TRUE)) |> 
-  count(status_desc) |> 
-  mutate(chamber = "Sen", bill_type = "Joint Resolution")
-
-hcr_status <- final_table |> 
-  filter(grepl("HCR", bill_number, ignore.case = TRUE)) |> 
-  count(status_desc) |> 
-  mutate(chamber = "House", bill_type = "Concurrent Resolution")
-
-scr_status <- final_table |> 
-  filter(grepl("SCR", bill_number, ignore.case = TRUE)) |> 
-  count(status_desc) |> 
-  mutate(chamber = "Sen", bill_type = "Concurrent Resolution")
-
-
-```
-
-```{r}
-final_table |> 
-  filter(grepl("abortion", description, ignore.case = TRUE))
-```
-
-```{r}
+```{r immigration bills}
 final_table |> 
   filter(grepl("immigration", description, ignore.case = TRUE))
 ```
 
-```{r}
-final_table |> 
-  filter(grepl("diversity", description, ignore.case = TRUE))
-```
+Now you can see every bill with a description that includes the word "immigration." If you want to search for more than one word at a time, add "\|" in between each word. For example:
 
 ```{r}
 final_table |> 
-  filter(grepl("energy", description, ignore.case = TRUE))
+  filter(grepl("immigration|border|visa|refugee", description, ignore.case = TRUE))
 ```
 
-```{r}
-final_table |> 
-  filter(grepl("cannabis|marijuana", description, ignore.case = TRUE))
-```
+Experiment with this function by filtering for other keywords. To change the column name you're filtering, replace "description" with the name of the column.
 
-```{r}
-final_table |> 
-  filter(grepl("prayer", description, ignore.case = TRUE))
-```
-
-::: {.callout-note icon="false"}
-## Reminder
-
-The data we're using for this section comes from the bill description only, not the full bill text. This is important to keep in mind as we search for key words.
+::: {.callout-note Title="Reminder"}
+The LegiScan data comes from the bill *description* only, not the *full bill text*. This is important to keep in mind as you search for key words.
 :::
 
-### 7. This session vs. last session
+### 5. Committees
 
-### 8. Saving tables for charts
+There are 54 different committees between the House and the Senate in the 89th session, each responsible for reviewing different types of policy. To see which committee was assigned the most bills, run this code in a new block:
 
-```{r}
-write_csv(most_filed, "data-processed/most-filed.csv")
+```{r committees}
+bills_per_committee <- final_table |> 
+  group_by(committee) |> 
+  summarise(bills = n()) |> 
+  arrange(desc(bills))
 ```
 
-### 9. Recap of what we learned
+```{r}
+bills_per_committee
+```
+
+Looks like about half of the bills haven't been assigned to committee, which makes sense given how many there are in session. In my results, the House State Affairs Committee has the most, but not by much. Other committees that have been assigned a lot of bills include House Public Education and Senate State Affairs. This would be an interesting thing to re-run later in the session, or after it ends, to see how the data changed.
+
+#### 5.1 Number of Senate committees 
+
+Filter for every committee name that includes "Senate."
+
+```{r}
+bills_per_committee |> 
+  filter(grepl("Senate", committee, ignore.case = TRUE)) |> 
+  count()
+```
+
+#### 5.2 Number of House committees 
+
+Now repeat that in a new block, but filter for House.
+
+```{r}
+bills_per_committee |> 
+  filter(grepl("House", committee, ignore.case = TRUE)) |> 
+  count()
+```
+
+This makes sense, given there are 150 representatives and only 31 senators.
+
+### Saving data for charts 
+
+You're going to use some of the data from this section to build our two charts, which means you need to save those tables to your computer. The write_csv() function takes a specific object and saves it as a csv file to your computer.
+
+Do this with the most_spons object, which is the table of top 10 sponsors that you saved earlier. The format for write_csv is (\[object name\], "\[path to where csv should save\]"). Copy and run the following code to save most_spons to your data-processed folder.
+
+```{r}
+write_csv(most_spons, "data-processed/most-spons.csv")
+```
+
+Now do the same for the sen_districts object.
+
+```{r}
+write_csv(most_spons, "data-processed/sen-districts.csv")
+```
+
+Click inside your data-processed folder to make sure those appear. AND SAVE YOUR R ANALYSIS FILE AGAIN.
+
+#### Export CSVs from posit.cloud
+
+1.  Open the data-processed folder.
+2.  Check the boxes for the two csv files you just created.
+3.  Click the blue settings button, and hit Export.
+4.  Name the zip file something that's easy to find later, like "processed-lege-tables" and hit Download.
+
+Make sure to do this before moving on to the next section.
+
+### Recap
+
+Pat yourself on the back because you just did so much great work! On top of answering all of the questions from the brainstorm, you learned a bunch of functions that are helpful for any data analysis:
+
+-   group_by()
+
+-   summarise()/summarize() ... both appear in R and they do the same thing
+
+-   arrange() and arrange(desc())
+
+-   count()
+
+-   filter() and filter(grepl()
+
+You also learned how to save objects and run them again, which is a good way to store the changes you made to the data. Lastly, you learned how to turn objects into csv files using write_csv.
+
+And hopefully you learned something new about the status of the Texas session! In the next section, you'll create two beautiful charts with no coding needed.

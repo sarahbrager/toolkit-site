@@ -42,7 +42,7 @@ This one shouldn't take as long.
 
 #### [Load them into the cleaning file]{.underline}
 
-Great! Click your cleaning.qmd file to open it up. At the top, write a little description to remind your future self what this file was for, something like "In this file I cleaned the bills, people, and sponsors data from LegiScan and merged the three together."
+Great! **Click your cleaning.qmd file to open it up.** At the top, write a little description to remind your future self what this file was for, something like "In this file I cleaned the bills, people, and sponsors data from LegiScan and merged the three together."
 
 Next, insert a code chunk (see tip below), and add a "Setup" label within the R bracket. Adding a title within the bracket allows you to name the code chunk, which helps you keep track of what's going on in each block of code. Another good organizational practice to get in the habit of.
 
@@ -67,7 +67,7 @@ And that's all you need to worry about for setup!
 posit.cloud does not auto save!! So make sure to hit **Command + S** frequently as you work on this.
 :::
 
-## Load the raw data  
+## Load the raw data
 
 Next, you need to tell R that you want it to read the CSV files from your data-raw folder so they appear below. The function to do this is aptly named read_csv().
 
@@ -256,6 +256,10 @@ final_table |>
 ```
 
 Nothing appears when you run it, but if you click into your data-processed folder, you should see the Rds file.
+
+::: {.callout-important Title="Reminder"}
+Have you saved your changes to this file? **Hit Command + S!**
+:::
 
 ## Recap
 
