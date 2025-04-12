@@ -14,11 +14,15 @@ Before I start any analysis, I like to brain dump a few questions I hope to answ
 
     -   How many haven't made any progress at all?
 
-4.  How can we identify bills based on keywords, like "immigration" to name one example
+4.  How can we identify bills based on keywords, like "immigration" to name one example?
 
 5.  How many bills have been assigned to each committee? How many committees make up the Senate vs. the House?
 
 This is not an exhaustive list of the questions you could answer with this data, but it's a good introduction to sorting through large data sets. Let's take a look at these questions one at a time.
+
+::: {.callout-note Title="Note"}
+My results might look different than yours throughout this section because I downloaded the data on a different date, meaning yours is more up-to-date than mine. But all of the instructions will still work.
+:::
 
 ### Setup again
 
@@ -90,7 +94,7 @@ My exact numbers might look different from yours because I downloaded this data 
 
 #### 1.2 Just the top of the list
 
-We're looking at a lot of rows here, 180 to be exact, so what if we wanted to highlight the top 10 lawmakers who have sponsored the most this session? We can do this with the head() function. Run the code again, this time with one extra line at the end. Save it into an object called most_filed.
+We're looking at a lot of rows here, 180 to be exact, so what if we wanted to highlight the top 10 lawmakers who have sponsored the most this session? We can do this with the head() function. Run the code again, this time with one extra line at the end. Save it into an object called most_spons.
 
 ```{r}
 #| label: top ten
@@ -101,7 +105,7 @@ most_spons <- final_table |>
   head(10)
 ```
 
-Now call most_filed to see the top 10 list.
+Now call most_spons to see the top 10 list.
 
 ```{r}
 most_spons
@@ -234,7 +238,7 @@ final_table |>
   arrange(desc(n))
 ```
 
-As you can see, most bills are still being reviewed in the first chamber and haven't gone to an official vote. Or maybe there was a vote without enough support and the bill died on the floor. If you're running this analysis much later in the session, or after the fact, you'll probably see a higher number for engrossed and passed.
+As you can see, most bills are at the status Introduced, meaning they're still being reviewed in the first chamber and haven't gone to an official vote. Or maybe there was a vote without enough support and the bill died on the floor. If you're running this analysis much later in the session, or after the fact, you'll probably see a higher number for engrossed and passed.
 
 You might be thinking, wow a lot of bills made it to the governor. Those are almost exclusively resolutions that memorialize people, commemorate anniversaries or recognize certain days in honor of something. They usually only have to be approved by one chamber, which is why they move through the legislative process so quickly.
 
@@ -257,6 +261,8 @@ Now you can see every bill with a description that includes the word "immigratio
 final_table |> 
   filter(grepl("immigration|border|visa|refugee", description, ignore.case = TRUE))
 ```
+
+#### 4.1 On your own 
 
 Experiment with this function by filtering for other keywords. To change the column name you're filtering, replace "description" with the name of the column.
 
@@ -319,7 +325,7 @@ Now do the same for the sen_districts object.
 write_csv(most_spons, "data-processed/sen-districts.csv")
 ```
 
-Click inside your data-processed folder to make sure those appear. AND SAVE YOUR R ANALYSIS FILE AGAIN.
+Click inside your data-processed folder to make sure those appear. AND SAVE YOUR ANALYSIS FILE AGAIN.
 
 #### Export CSVs from posit.cloud
 
