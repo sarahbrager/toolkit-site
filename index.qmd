@@ -1,5 +1,6 @@
 ---
 title: "Reporting on the Texas Legislature Using Data: A Digital Toolkit for Journalists"
+---g
 ---
 
 This toolkit offers an **introduction to data analysis for news reporting**, with step-by-step tutorials for downloading data, analyzing it in R, making different visualizations, and brainstorming potential news stories based on the findings. All of the exercises in this lesson center around one dataset of Texas legislative bills from the 89th session, but the skills taught throughout the tutorial can apply to other data analysis projects.

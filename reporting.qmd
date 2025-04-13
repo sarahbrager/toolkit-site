@@ -5,18 +5,26 @@ format: html
 
 intro
 
-### Incorporating the data in your reporting 
+### Incorporating the data in your reporting
 
-If you're a journalist covering Texas politics and policymaking in any way, these statistics could provide great context for readers about the current legislative session. Whether you're doing a broad overview of trends from the session or reporting on a specific bill, you can come back to this analysis and pull information to weave into your article. For example:
+If you're a journalist covering Texas politics and policy making in any way, these statistics could provide great context for readers about the current legislative session. Whether you're doing a broad overview of trends from the session or reporting on a specific bill, you can come back to this analysis and pull information to weave into your article. For example:
 
 #### [Some tips for writing with numbers]{.underline}
 
 -   Don't include more than 2-3 stats in a paragraph.
 
--   
+-   Use comparisons to help people understand. For example, if you wrote about the total number of bills filed this session, compare that stat to previous sessions so readers understand if much higher/lower or about the same.
 
-#### [What if I'm a journalist in a different state?]{.underline} 
+-   Find human sources who can add context to the data. Data journalism doesn't mean the stats are your only source, they're just an extra layer of reporting.
+
+-   When possible, include a chart that visually explains what you're talking about in the story. Some people process information better with visuals, and most readers nowadays engage more with graphics than big blocks of text.
+
+    -   Plus, you can add extra detail about the data to the caption of your chart, which you may not have had room for in the actual story.
+
+-   Keep things simple.
+
+#### [What if I'm a journalist in a different state?]{.underline}
 
 You can run this exact analysis using LegiScan data from any other state! Follow the instructions on the Sourcing page, but select your state of choice when downloading the data.
 
-### Story ideas based on the data 
+### Story ideas based on the data
