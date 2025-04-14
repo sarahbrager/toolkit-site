@@ -11,7 +11,7 @@ If you liked these tutorials and want to keep using R, visit [this page](https:/
 
 For more R lessons, try the free [Learn R](https://www.codecademy.com/learn/learn-r) courses on Code Academy. [Coursera](https://www.coursera.org/learn/r-programming) also offers a more in depth R programming workshop for free. I haven't used it, but it could be worth checking out. And YouTube, of course! Tons of people have created R video tutorials if you want to explore those.
 
-#### [Not a fan of R?]{.underline} 
+#### [Not a fan of R?]{.underline}
 
 No biggie. You can still do tons of data analysis without programming, like in spreadsheets (Google Sheets/Excel). If you have access to [LinkedIn Learning](https://www.linkedin.com/learning/?u=36306084), you can find lots of spreadsheets lessons ranging from beginner to more advanced. They also have a section just for coding practice. YouTube is another great place to find spreadsheet tutorials.
 

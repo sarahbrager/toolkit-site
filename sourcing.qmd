@@ -1,6 +1,5 @@
 ---
 title: "Downloading Data from LegiScan"
-format: html
 ---
 
 *Include a video tutorial at the top of this page*
