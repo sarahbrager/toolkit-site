@@ -29,7 +29,7 @@ website:
         href: mailto:sarahbrager@utexas.edu
   page-footer: 
     background: light
-    left: This website was built with # add R and Quarto icons later
+    left: This website was published using GitHub pages.
       
   sidebar:
     style: "docked"

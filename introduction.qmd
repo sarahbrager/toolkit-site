@@ -5,7 +5,7 @@ format: html
 
 ### What is it?
 
-Data journalism, or data-driven storytelling, is a form of journalism that involves sifting through large data sets to uncover trend and answer questions, and then presenting those findings to the public as you would any other type of newsworthy information. Simply put, it’s telling stories found in data.
+Data journalism, or data-driven storytelling, is a form of journalism that involves sifting through large data sets to uncover trends and answer questions, and then presenting those findings to the public as you would any other type of newsworthy information. Simply put, it’s telling stories found in data.
 
 Data-driven storytelling can be hard-hitting and investigative or fun and entertaining. There's no one right way of data reporting, and it's always changing as digital tools become more advanced and accessible. Data journalism has many forms, including:
 

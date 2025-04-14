@@ -1,6 +1,5 @@
 ---
 title: "Reporting on the Texas Legislature Using Data: A Digital Toolkit for Journalists"
----g
 ---
 
 This toolkit offers an **introduction to data analysis for news reporting**, with step-by-step tutorials for downloading data, analyzing it in R, making different visualizations, and brainstorming potential news stories based on the findings. All of the exercises in this lesson center around one dataset of Texas legislative bills from the 89th session, but the skills taught throughout the tutorial can apply to other data analysis projects.
@@ -21,7 +20,7 @@ If you already have intermediate experience using R for data analysis, this tuto
 
 #### [Who created this lesson?]{.underline}
 
-This toolkit was **created by Sarah Brager**, a graduating journalism and public policy student at the University of Texas at Austin. She designed this project for her senior honors capstone. To learn more about Sarah, visit the "Meet the Author" page on the left sidebar.
+This toolkit was **created by Sarah Brager**, a graduating journalism student at the University of Texas at Austin. She was advised my Professor [Christian McDonald](https://journalism.utexas.edu/faculty/christian-mcdonald), who [teaches](https://github.com/utdata) data reporting at UT. To learn more about Sarah, visit the "Meet the Author" page on the left sidebar.
 
 ## Toolkit objectives
 

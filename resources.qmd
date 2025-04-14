@@ -3,16 +3,28 @@ title: "Resources"
 format: html
 ---
 
-This will have a list of resources related to data analysis/coding if people want to learn more than what's in this toolkit.
+#### [Installing RStudio]{.underline}
 
--   video for installing R
+If you liked these tutorials and want to keep using R, visit [this page](https://posit.co/downloads/) to install RStudio to your computer (it's free). You will eventually hit a paywall if you keep working in posit.cloud.
 
--   Links to R tutorials
+#### [More R tutorials]{.underline}
 
--   Code academy link again
+For more R lessons, try the free [Learn R](https://www.codecademy.com/learn/learn-r) courses on Code Academy. [Coursera](https://www.coursera.org/learn/r-programming) also offers a more in depth R programming workshop for free. I haven't used it, but it could be worth checking out. And YouTube, of course! Tons of people have created R video tutorials if you want to explore those.
 
--   Datawrapper academy link again
+#### [Not a fan of R?]{.underline} 
 
--   Link to spreadsheet tutorials
+No biggie. You can still do tons of data analysis without programming, like in spreadsheets (Google Sheets/Excel). If you have access to [LinkedIn Learning](https://www.linkedin.com/learning/?u=36306084), you can find lots of spreadsheets lessons ranging from beginner to more advanced. They also have a section just for coding practice. YouTube is another great place to find spreadsheet tutorials.
 
--   
+#### [Data Viz]{.underline}
+
+Like I mentioned before, [Datawrapper Academy](https://academy.datawrapper.de/) has lots of tips for creating different types of charts and displaying them like a pro. If you're ready for something more advanced, try [ggplot tutorials](https://r-statistics.co/Complete-Ggplot2-Tutorial-Part1-With-R-Code.html), which show you how to create visualizations within R using code. This is not as user-friendly and may take some patience, but it's a good skill if you're serious about being a data journalist/data visuals editor.
+
+#### [Troubleshooting Code Errors]{.underline}
+
+Always always carefully check your syntax. You may have misspelled something or missed a comma. If everything looks correct and you're still running into an error, try re-running all the code on your page. Sometimes that will do the trick. If it's *still* not working, there are lots of online forums where people get code advice from other analysts/programmers.
+
+If you search the exact problem you're having, it's likely someone else has had that problem. [Stack Overflow](https://stackoverflow.com/questions/tagged/r) answers thousands of questions specific to R. There's also an [RStudio subreddit](https://www.reddit.com/r/RStudio/). And use ChatGPT!! You can ask ChatGPT R-specific questions and ask it to explain the code to you, which is a great learning tool.
+
+#### [Data Journalism Tips]{.underline}
+
+Every year the Investigative Reporters & Editors organization hosts a conference entirely focused on data journalism practices, called NICAR. They so kindly make tipsheets, slide presentations, and audio available as a resource on their website. Here some [resources](https://www.ire.org/training/conferences/nicar-2025/nicar-2025-tipsheets-and-audio/) from the most recent 2025 conference, and you can also search for previous tipsheets.

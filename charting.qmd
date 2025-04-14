@@ -32,14 +32,14 @@ Take a peek at the two finished charts below to get a sense of what you're going
 
 **2. An interactive map of Texas senate districts + bills filed per state senator:**
 
-::: {.callout-tip title="Tip"}
-Click on a district to see the senator's name and the number of bills/joint resolutions they sponsored this session. Also note the zoom feature in the lower right corner.
-:::
-
 ```{=html}
 <iframe title="Which Texas senators sponsored the most legislation this session, and who do they represent? " aria-label="Map" id="datawrapper-chart-59Y00" src="https://datawrapper.dwcdn.net/59Y00/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="804" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
 </script>
 ```
+
+::: callout-tip
+Click on a district to see the senator's name and the number of bills/joint resolutions they sponsored this session. Also note the zoom feature in the lower right corner.
+:::
 
 ### Create a Datawrapper account
 
@@ -49,10 +49,24 @@ Go to datawrapper.de and click "Start creating" to make your free account. Once 
 
 #### **The bar chart**
 
-*video tutorial for the first chart*
+{{< video https://www.youtube.com/watch?v=4Mi5VFvO8WM >}}
 
 #### **The map**
 
-*video tutorial for the second chart*
+{{< video https://www.youtube.com/watch?v=NEG6zmLaWPI >}}
 
 ### Recap
+
+Now you have two beautiful charts to show off! Play around with the other types of charts and maps in Datawrapper on your own. Here are some key things to keep in mind for making data viz for news reporting:
+
+-   Embrace your inner minimalist. Only add color/text/shading when it helps convey important information. If someone takes a look at your chart and immediately feels overwhelmed, they're going to scroll right past it.
+
+-   Be brief but specific with titles. Avoid titles like, "Map of Texas Senate Districts." That doesn't tell the reader anything about the data.
+
+-   Add appropriate context in the description (1-2 sentences). Always include the name and date of the data source.
+
+-   Make things interactive when possible! People love to "play" with graphics.
+
+-   For news charts, use AP Style grammar in your title/description so it's consistent with the rest of the article.
+
+The next section of this toolkit highlights ways to use what you've learned thus far in your actual reporting. You're almost at the end!

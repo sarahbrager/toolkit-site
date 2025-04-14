@@ -329,7 +329,7 @@ write_csv(most_spons, "data-processed/most-spons.csv")
 Now do the same for the sen_districts object.
 
 ```{r}
-write_csv(most_spons, "data-processed/sen-districts.csv")
+write_csv(sen_districts, "data-processed/sen-districts.csv")
 ```
 
 Click inside your data-processed folder to make sure those appear. AND SAVE YOUR ANALYSIS FILE AGAIN.

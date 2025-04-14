@@ -4,7 +4,9 @@ title: "Cleaning The Data"
 
 It's very rare that a dataset comes in the exact format that you want it. There might be unnecessary/distracting columns (as you'll soon see with the Texas Lege data), empty cells, confusing column names, etc. This is why it's always good practice to "clean" the data and get it in proper shape before you start analyzing it. How do you clean it? With code! You can use simple lines of code to rename columns, remove or select columns, merge data from separate tables together, and more.
 
-Before we get into that, let's open the README file to learn about the variables included in each dataset.
+::: callout-tip
+If at any point you find yourself running into errors that you can't resolve, try taking a step back in the tutorial and make sure your steps match mine. If you're still struggling, see my troubleshooting tips on the Additional Resources page of this website.
+:::
 
 ## Read about each CSV
 
@@ -142,7 +144,7 @@ Notice how I saved this in a new object called "bills_clean." This means the unt
 
 Now you can click through the table to see that the url, state link, and session id data is gone.
 
-### 2. Lawmakers (people) 
+### 2. Lawmakers (people)
 
 Looking at the people data, which we've saved as "lawmakers," you can see there are a lot of specific ids for other open data portals, like Follow the Money, Open Secrets, Ballotpedia, and KnowWho. While these are cool to have, we don't need them for the analysis we're running today. If you were writing a story about legislative campaign funds in Texas, for example, you might chose to keep the Follow the Money column.
 
