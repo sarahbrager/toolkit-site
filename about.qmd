@@ -2,8 +2,6 @@
 title: "Getting Started with R"
 ---
 
-*Video tutorial on setting up workspace in posit.cloud.*
-
 ### What is R?
 
 This tutorial will introduce you to basic data analysis that can be done in R, which is one of many programming languages used by data journalists to better understand large, complex data sets. While this toolkit will show you some of R's capabilities, it is by no means a complete look at how R can be used. If you like the activities in this toolkit, I highly recommend you check out the additional resources provided on this website.
@@ -16,13 +14,17 @@ Nope! An interest in stats is helpful, but this tutorial is designed for people 
 
 If you decide after this tutorial that you want to learn more R programming skills, check out these free R courses on [Code Academy](https://www.codecademy.com/catalog/language/r?g_network=g&g_productchannel=&g_adid=699378987796&g_locinterest=&g_keyword=learn%20r&g_acctid=243-039-7011&g_adtype=&g_keywordid=kwd-298045963101&g_ifcreative=&g_campaign=account&g_locphysical=9198393&g_adgroupid=165097891129&g_productid=&g_source=%7Bsourceid%7D&g_merchantid=&g_placement=&g_partition=&g_campaignid=21287608736&g_ifproduct=&utm_id=t_kwd-298045963101:ag_165097891129:cp_21287608736:n_g:d_c&utm_source=google&utm_medium=paid-search&utm_term=learn%20r&utm_campaign=US_-_Exact&utm_content=699378987796&g_adtype=search&g_acctid=243-039-7011&gad_source=1&gclid=CjwKCAjwktO_BhBrEiwAV70jXh5NFq-Nvw8PiqoUM4KNkTu32W0JTGEn_z3YkO9SWvSHkr20GXnRshoCxVwQAvD_BwE). We'll go over some of those skills in this toolkit, but not all of them. If you want to build on what you'll learn today, check out the Code Academy library (you can earn certifications for your resume!)
 
+### Video tutorial (optional)
+
+{{< video https://www.youtube.com/watch?v=P8WyngQ2gFQ >}}
+
 ### First steps
 
 #### **1. Go to posit.cloud and create an account**
 
 This is an online version of R, meaning you'll be able to work with the same interface as the R desktop application but in your web browser. If you already have RStudio installed on your computer or would prefer to use the desktop version, that will also work.
 
-#### [Installing RStudio (optional)]{.underline} 
+#### [Installing RStudio (optional)]{.underline}
 
 If you want to install RStudio on your computer, instructions for that can be found on the [Additional Resources](https://sarahbrager.github.io/toolkit-site/resources.html) tab on the left sidebar. The steps I provide throughout this toolkit are more specific to posit.cloud; that being said, if you already know how to set up projects within RStudio, feel free to run your analysis in there.
 
@@ -48,9 +50,9 @@ These are the 4 main windows within any R project: file workspace (top left), co
 
 ![](toolkit-pics/windows.png)
 
-#### **4. Adding to your library**
+### Create files in your library
 
-##### [**First, folders**]{.underline}
+#### [First, folders]{.underline}
 
 Before we download the data, let's create two folders where you'll drop the files. This is a good practice for keeping your files organized in any R project you work in. In your files window (bottom right), click the icon in the top left corner to create and name a new folder. Title the first one "data-raw" and then create a second folder called "data-processed"
 
@@ -58,7 +60,7 @@ Before we download the data, let's create two folders where you'll drop the file
 
 Once you've created those, you'll see them appear in your files list. The data-raw folder is where you'll eventually put the unedited dataset that we're going to download in the next step. Any data that you clean up/edit should be stored in the data-processed folder. It's always good to keep a copy of the original data separate from the version that we're going to edit and analyze, hence the two folders. Keep this in mind for any future data projects you decide to pursue!
 
-##### [**Now, the Quarto files**]{.underline}
+#### [Now, the Quarto files]{.underline}
 
 We're also going to create two files inside which we'll run code to analyze the data. Click the new file icon and select "Quarto Document." Name one "cleaning.qmd" and then create another and call it "analysis.qmd." Both of those should appear in your files list. We'll come back to these later on in the tutorial.
 

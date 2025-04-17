@@ -1,8 +1,7 @@
 ---
 title: "Downloading Data from LegiScan"
+format: html
 ---
-
-*Include a video tutorial at the top of this page*
 
 ### Our data source
 
@@ -11,6 +10,10 @@ All of the data for this tutorial comes from [LegiScan](https://legiscan.com/dat
 LegiScan is a good example of the type of public database that a data journalist might pull from frequently. There are lots of other resources available online with data from government agencies. If you're a journalist covering the environment, for example, you might try the [EPA's Open Data Portal](https://www.epa.gov/data). If you're a local government reporter, you might pull public records from your city's database, like the [City of Austin's portal](https://data.austintexas.gov/). And then there are more general community databases, like [Kaggle](https://www.kaggle.com/datasets), which lets you filter by topic.
 
 Now let's get into the Texas Lege data!
+
+### Video tutorial (optional)
+
+{{< video https://www.youtube.com/watch?v=yLzbSoiDW9c >}}
 
 ### Steps for downloading
 

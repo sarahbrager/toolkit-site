@@ -5,7 +5,7 @@ title: "Reporting on the Texas Legislature Using Data: A Digital Toolkit for Jou
 This toolkit offers an **introduction to data analysis for news reporting**, with step-by-step tutorials for downloading data, analyzing it in R, making different visualizations, and brainstorming potential news stories based on the findings. All of the exercises in this lesson center around one dataset of Texas legislative bills from the 89th session, but the skills taught throughout the tutorial can apply to other data analysis projects.
 
 ::: callout-note
-This website was last updated on April 12, 2025. It is subject to changes.
+This website was last updated on April 17, 2025. It is subject to changes.
 :::
 
 ## About this project
@@ -34,6 +34,6 @@ This toolkit was **created by Sarah Brager**, a graduating journalism student at
 
 -   Used code to analyze the data and note important trends
 
--   Convey some of those trends in two types of charts
+-   Conveyed some of those trends in two types of charts
 
 -   Brainstormed potential ways to use this data in news production

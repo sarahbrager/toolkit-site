@@ -5,11 +5,11 @@ format: html
 
 #### [Installing RStudio]{.underline}
 
-If you liked these tutorials and want to keep using R, visit [this page](https://posit.co/downloads/) to install RStudio to your computer (it's free). You will eventually hit a paywall if you keep working in posit.cloud.
+If you liked these tutorials and want to keep using R, visit [this page](https://posit.co/downloads/) to install RStudio to your computer (it's free). You will eventually hit a paywall if you keep working in posit.cloud ... although it should last you a while!
 
 #### [More R tutorials]{.underline}
 
-For more R lessons, try the free [Learn R](https://www.codecademy.com/learn/learn-r) courses on Code Academy. [Coursera](https://www.coursera.org/learn/r-programming) also offers a more in depth R programming workshop for free. I haven't used it, but it could be worth checking out. And YouTube, of course! Tons of people have created R video tutorials if you want to explore those.
+For more R lessons, try the free [Learn R](https://www.codecademy.com/learn/learn-r) courses on Code Academy. If you learn well through textbooks, try the free online textbook [R For Data Science](https://r4ds.had.co.nz/index.html). The textbook is easy to work through and introduces very useful R concepts far beyond what we covered in this toolkit. [Coursera](https://www.coursera.org/learn/r-programming) also offers a more in depth R programming workshop for free. I haven't used it, but it could be worth checking out. And YouTube, of course! Tons of people have created R video tutorials if you want to explore those.
 
 #### [Not a fan of R?]{.underline}
 
