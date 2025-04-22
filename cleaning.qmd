@@ -18,6 +18,12 @@ Now you can scroll through the README and learn more about each dataset, includi
 
 As I said in the last section, we're only going to be working with the "**bills," "people," and "sponsors"** datasets, so definitely take a look at those. If you want to close the document, click on the small "x" next to the file name (right above the toolbar). But you can also keep it open as we work in our cleaning file.
 
+## Video tutorial (optional)
+
+{{< video https://www.youtube.com/watch?v=N7XTrLOXXR4 >}}
+
+This video doesn't walk through *all* of the instructions on this page, but it's helpful if you need to visualize how you should be adding code within your .qmd file.
+
 ## Setup
 
 Before we start coding, we need to install and load the packages that are going to help facilitate the data analysis. You don't need to worry about what each package does, but this is an important setup step that allows us to use specific functions later on. I always include **tidyverse and janitor** at the top of every R file.

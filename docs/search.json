@@ -288,5 +288,15 @@
     "crumbs": [
       "Cleaning the Data"
     ]
+  },
+  {
+    "objectID": "cleaning.html#video-tutorial-optional",
+    "href": "cleaning.html#video-tutorial-optional",
+    "title": "Cleaning The Data",
+    "section": "Video tutorial (optional)",
+    "text": "Video tutorial (optional)\n\nThis video doesn’t walk through all of the instructions on this page, but it’s helpful if you need to visualize how you should be adding code within your .qmd file.",
+    "crumbs": [
+      "Cleaning the Data"
+    ]
   }
 ]
