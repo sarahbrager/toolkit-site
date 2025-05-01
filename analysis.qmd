@@ -24,6 +24,10 @@ This is not an exhaustive list of the questions you could answer with this data,
 **My results might look different than yours throughout this section because I downloaded the data on a different date, meaning yours is more up-to-date than mine. If you ever re-run this analysis at a later date, expect your results to change.**
 :::
 
+### Video tutorial (optional)
+
+{{< video https://www.youtube.com/watch?v=CZNg1T8kzpk >}}
+
 ### Setup again
 
 Open your analysis.qmd file.
